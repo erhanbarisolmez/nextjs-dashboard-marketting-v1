@@ -1,0 +1,40 @@
+'use client'
+import { Box, Typography } from '@mui/material';
+import Link from 'next-intl/link';
+
+
+const LanguageSwitcher = (props) => {
+
+  return (
+    <Box
+      sx={{
+        position: "fixed",
+        display: 'flex',
+        flexDirection: 'row',
+        top: "10px", // Adjust as needed
+        right: "20px", // Adjust as needed
+        zIndex: 9999, // Adjust as needed
+      }}
+    >
+      <Link passHref href={props.hrefEN} locale="en">
+
+        <Typography variant='subtitle1' >
+          EN
+        </Typography>
+
+      </Link>
+      <Typography variant='subtitle1' sx={{ml:1, mr:1}}>
+        |
+      </Typography>
+
+      <Link passHref href={props.hrefTR} locale="tr">
+
+        <Typography variant='subtitle1'>
+          TR
+        </Typography>
+      </Link>
+    </Box>
+  );
+};
+
+export default LanguageSwitcher;
