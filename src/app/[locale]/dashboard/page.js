@@ -19,12 +19,12 @@ import {
 } from '@mui/icons-material';
 import { Box, Divider, Grid, Paper } from '@mui/material';
 import { useTranslations } from "next-intl";
-
 const DashboardPage = () => {
   const t = useTranslations();
 
   return (
     <>
+  
       <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', justifyItems: 'center', alignContent: 'center', height: "100%" }}>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={12} md={12} lg={6} sx={{ display: 'flex' }}>

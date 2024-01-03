@@ -26,6 +26,8 @@ const ProfilePage = ({params:{locale}}) => {
   ];
   return (
     <>
+
+  
     <CheckoutPage
       checkOutHeader={t('checkout')}
       checkOutTitle={t('all-plans-include-40-advanced-tools-and-features-to-boost-your-product')}

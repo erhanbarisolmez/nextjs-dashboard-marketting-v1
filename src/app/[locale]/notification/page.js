@@ -6,6 +6,7 @@ const NotificationsPage = async ({params:{locale}}) => {
   const products = await productService.getProduct()
   return (
     <>
+   
       <ul>
         {products.map((product, index) => (
           <li key={index}>

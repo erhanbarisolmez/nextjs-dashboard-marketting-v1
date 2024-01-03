@@ -1,4 +1,4 @@
-import { deepPurple } from '@mui/material/colors';
+// import { deepPurple } from '@mui/material/colors';
 
 export const palette = {
   red: {
@@ -114,4 +114,4 @@ export const palette = {
 }
 };
 
-console.log(deepPurple)
+// console.log(deepPurple)

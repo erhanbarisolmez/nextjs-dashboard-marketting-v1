@@ -1,15 +1,14 @@
-import { SearchInput } from '@/components/Search';
+
+import SearchInput from '@/components/SearchInput';
 import { Box } from '@mui/material';
 import NavLinks from './nav-links';
 
-const Navbar = () => {
-  
+const Navbar = ({theme, changeColorMode}) => {
   return (
     <>
       <Box sx={{
         display: 'flex', flexDirection: 'row', justifyContent: 'space-between', mt: 5, mb: 5
       }}>
-
         <SearchInput />
         <Box sx={{
           display: 'flex',
@@ -17,8 +16,7 @@ const Navbar = () => {
           gap: 2,       
           color:'gray'
         }}>
-          
-         <NavLinks />
+         <NavLinks/>
         </Box>
       </Box>
 
@@ -26,4 +24,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar 

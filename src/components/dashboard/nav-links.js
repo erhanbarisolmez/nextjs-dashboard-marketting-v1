@@ -7,16 +7,19 @@ import {
   TranslateOutlined as TranslateIcon,
   WidgetsOutlined as WidgetsIcon,
 } from "@mui/icons-material";
+
 import { useState } from "react";
 
-const NavLinks = () => {
+const NavLinks = (
+  
+) => {
   const pathname = usePathname();
   const [currentLanguage, setCurrentLanguage] = useState(
     pathname.startsWith("/en") ? "en" : "tr"
   );
 
   const toggleLanguage = () => {
-    setCurrentLanguage((prevLanguage) => (prevLanguage === "en" ? "tr" : "en" || prevLanguage === "tr" ? "en" : "tr" ));
+    setCurrentLanguage((prevLanguage) => (prevLanguage === "en" ? "tr" : "en" ));
   };
 
   const links = [
@@ -25,7 +28,7 @@ const NavLinks = () => {
       href: { pathname },
       onClick: toggleLanguage, 
     },
-    { Icon: BrightnessIcon, href: "" },
+    { Icon: BrightnessIcon, href: "",},
     { Icon: WidgetsIcon, href: `dashboard` },
     { Icon: NotificationsIcon, href: `notification` },
     { Icon: PersonIcon, href: `profile` },
