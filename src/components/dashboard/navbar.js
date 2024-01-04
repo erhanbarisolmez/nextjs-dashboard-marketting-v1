@@ -3,7 +3,7 @@ import SearchInput from '@/components/SearchInput';
 import { Box } from '@mui/material';
 import NavLinks from './nav-links';
 
-const Navbar = ({theme, changeColorMode}) => {
+const Navbar = () => {
   return (
     <>
       <Box sx={{

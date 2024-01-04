@@ -1,25 +1,15 @@
 {
   "pages": {
-    "/[locale]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/layout.css",
-      "static/chunks/app/[locale]/layout.js"
-    ],
-    "/[locale]/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/dashboard/page.js"
-    ],
     "/[locale]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/page.js"
     ],
-    "/[locale]/profile/page": [
+    "/[locale]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/profile/page.js"
+      "static/css/app/[locale]/layout.css",
+      "static/chunks/app/[locale]/layout.js"
     ],
     "/[locale]/notification/page": [
       "static/chunks/webpack.js",
