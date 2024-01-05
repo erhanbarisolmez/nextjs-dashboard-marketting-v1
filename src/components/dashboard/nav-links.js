@@ -8,10 +8,11 @@ import {
   TranslateOutlined as TranslateIcon,
   WidgetsOutlined as WidgetsIcon,
 } from "@mui/icons-material";
+import { Grid, Typography } from "@mui/material";
 import { useState } from "react";
 
 const NavLinks = () => {
-  const pathname = usePathname();
+  const pathname = usePathname("");
   const [currentLanguage, setCurrentLanguage] = useState(
     pathname.startsWith("/en") ? "en" : "tr"
   );
@@ -28,18 +29,18 @@ const NavLinks = () => {
   const links = [
     {
       Icon: TranslateIcon,
-      href: pathname, // Use string directly
+      href: pathname,
       onClick: toggleLanguage,
     },
-    { Icon: BrightnessIcon, href: pathname },
+    { Icon: BrightnessIcon, href: "" },
     { Icon: WidgetsIcon, href: `dashboard` },
     {
       Icon: ECommerce,
       onClick: toggleECommerceMenu,
-      href: pathname,
+      href: "",
       linksMenu: {
         onClick: toggleECommerceMenu,
-        items: ["products", "categories"],
+        items: ["Products", "Categories", "Add Product", "Edit Product", "Add Category", "Edit"],
       }
     },
     { Icon: NotificationsIcon, href: `notification` },
@@ -48,29 +49,53 @@ const NavLinks = () => {
 
   return (
     <>
-      {links.map(({ Icon, href, onClick, linksMenu }) => (
-        <>
-          <Link href={href} locale={currentLanguage} onClick={onClick}>
-            <Icon sx={{ color: "gray", }} />
-            {linksMenu && isECommerceMenuOpen && (
-            <div>
-              <ul>
-                {linksMenu.items.map((item) => (
-                  <>  
-                      <li key={item}>    
-                        <Link href={`e-commerce/${item}`}>               
-                          {item}
+      <Grid container>
+        <Grid item xs={12} sx={{
+          display: 'flex',
+        }}>
+          {links.map(({ Icon, href, onClick, linksMenu }) => (
+            <>
+              <Link href={href} locale={currentLanguage} onClick={onClick} >
+                <Icon sx={{ color: "gray", display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', ml: 1, mr: 2 }} />
+         
+                {linksMenu && isECommerceMenuOpen &&  (
+                  <div>
+                    <ul>
+                      {linksMenu.items.map((item) => (
+                        <>
+                          <Link  onClick={toggleECommerceMenu} href={`${item.toLowerCase()}`}>
+                          <Typography p={1} variant="subtitle1" sx={{
+                              color: 'text.secondary',
+                              fontWeight: '500',
+                              ":active": {
+
+                              },
+                              ":hover": {
+                                bgcolor: "GrayText",
+                                opacity: 0.5,
+                                overflow: "hidden",
+                                textOverflow: "initial",
+                                border: 1,
+                                borderRadius: 3,
+                                color: 'blue',
+                                fontWeight: '600',
+
+                              }
+                            }}>
+                              {item}
+                            </Typography>
                           </Link>
-                      </li>
-                  </>
-                ))}
-              </ul>
-            </div>
-          )}
-          </Link>
-          
-        </>
-      ))}
+                        </>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </Link>
+
+            </>
+          ))}
+        </Grid>
+      </Grid>
     </>
   );
 };

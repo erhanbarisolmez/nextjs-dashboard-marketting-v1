@@ -1,12 +1,8 @@
-import NestedList from "@/components/listMenu"
-const ECommerce = () => {
+
+const ECommerce  = () => {
   return (
-    <>
-   <NestedList >
-   
-    </NestedList>
-    </>
+    <div>ECommerce  </div>
   )
 }
 
-export default ECommerce
+export default ECommerce  
