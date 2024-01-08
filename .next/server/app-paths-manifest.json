@@ -1,7 +1,7 @@
 {
-  "/not-found": "app/not-found.js",
+  "/[locale]/add-product/page": "app/[locale]/add-product/page.js",
+  "/[locale]/products/page": "app/[locale]/products/page.js",
+  "/[locale]/categories/page": "app/[locale]/categories/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js",
-  "/[locale]/e-commerce/products/page": "app/[locale]/e-commerce/products/page.js",
-  "/[locale]/e-commerce/page": "app/[locale]/e-commerce/page.js"
+  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js"
 }

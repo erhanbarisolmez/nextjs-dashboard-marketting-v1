@@ -1,45 +1,50 @@
 {
   "pages": {
+    "/[locale]/edit-product/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/edit-product/page.js"
+    ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/[locale]/layout.css",
       "static/chunks/app/[locale]/layout.js"
     ],
-    "/[locale]/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/dashboard/page.js"
-    ],
     "/[locale]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/page.js"
     ],
-    "/[locale]/profile/page": [
+    "/[locale]/edit-category/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/profile/page.js"
+      "static/chunks/app/[locale]/edit-category/page.js"
     ],
-    "/[locale]/notification/page": [
+    "/[locale]/add-category/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/notification/page.js"
+      "static/chunks/app/[locale]/add-category/page.js"
     ],
-    "/[locale]/e-commerce/products/page": [
+    "/[locale]/add-product/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/e-commerce/products/page.js"
+      "static/chunks/app/[locale]/add-product/page.js"
     ],
-    "/[locale]/e-commerce/page": [
+    "/[locale]/products/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/e-commerce/page.js"
+      "static/chunks/app/[locale]/products/page.js"
     ],
-    "/not-found": [
+    "/[locale]/categories/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/[locale]/categories/page.js"
+    ],
+    "/[locale]/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/dashboard/page.js"
     ]
   }
 }

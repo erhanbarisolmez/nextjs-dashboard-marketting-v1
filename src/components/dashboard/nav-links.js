@@ -9,10 +9,10 @@ import {
   WidgetsOutlined as WidgetsIcon,
 } from "@mui/icons-material";
 import { Grid, Typography } from "@mui/material";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const NavLinks = () => {
-  const pathname = usePathname("");
+  const pathname = usePathname();
   const [currentLanguage, setCurrentLanguage] = useState(
     pathname.startsWith("/en") ? "en" : "tr"
   );
@@ -24,6 +24,7 @@ const NavLinks = () => {
 
   const toggleECommerceMenu = () => {
     setECommerceMenuOpen((prev) => !prev);
+    
   };
 
   const links = [
@@ -40,7 +41,7 @@ const NavLinks = () => {
       href: "",
       linksMenu: {
         onClick: toggleECommerceMenu,
-        items: ["Products", "Categories", "Add Product", "Edit Product", "Add Category", "Edit"],
+        items: ["Products", "Categories", "Add Product", "Edit Product", "Add Category", "Edit Category"],
       }
     },
     { Icon: NotificationsIcon, href: `notification` },
@@ -53,23 +54,22 @@ const NavLinks = () => {
         <Grid item xs={12} sx={{
           display: 'flex',
         }}>
-          {links.map(({ Icon, href, onClick, linksMenu }) => (
-            <>
-              <Link href={href} locale={currentLanguage} onClick={onClick} >
-                <Icon sx={{ color: "gray", display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', ml: 1, mr: 2 }} />
-         
-                {linksMenu && isECommerceMenuOpen &&  (
+          {links.map(({ Icon, href, onClick, linksMenu}, index) => (
+            <Fragment key={`link-${index}`}>
+
+              <Link href={href} locale={currentLanguage} onClick={onClick} key={`link-${index}`}>
+                <Icon key={`icon-${index}`}  sx={{ color: "gray", display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', ml: 1, mr: 2 }} />
+
+                {linksMenu && isECommerceMenuOpen && (
                   <div>
                     <ul>
-                      {linksMenu.items.map((item) => (
+                      {linksMenu.items.map((item, subIndex) => (
                         <>
-                          <Link  onClick={toggleECommerceMenu} href={`${item.toLowerCase()}`}>
-                          <Typography p={1} variant="subtitle1" sx={{
+                        <li key={`menu-item-${index}-${subIndex}`}>
+                          <Link onClick={toggleECommerceMenu} href={`${item.toLowerCase().replace(" ", "-")}`}>
+                            <Typography p={1} variant="subtitle1" sx={{
                               color: 'text.secondary',
                               fontWeight: '500',
-                              ":active": {
-
-                              },
                               ":hover": {
                                 bgcolor: "GrayText",
                                 opacity: 0.5,
@@ -79,12 +79,13 @@ const NavLinks = () => {
                                 borderRadius: 3,
                                 color: 'blue',
                                 fontWeight: '600',
-
-                              }
+                              },
+                           
                             }}>
                               {item}
                             </Typography>
                           </Link>
+                          </li>
                         </>
                       ))}
                     </ul>
@@ -92,10 +93,11 @@ const NavLinks = () => {
                 )}
               </Link>
 
-            </>
+            </Fragment>
           ))}
         </Grid>
       </Grid>
+
     </>
   );
 };
