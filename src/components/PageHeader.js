@@ -1,17 +1,17 @@
 'use client'
 import { palette } from "@/style/color";
-import { variant } from "@/utils/variant";
+import { variants } from "@/utils/variants";
 import { Grid, Typography } from "@mui/material";
 import CustomButton from "./CustomButton";
 const PageHeader = ({headerText}) => {
-   const contained = variant.button.contained;
+   const contained = variants.button.contained;
    const onClickFilteredButton = () => {
     console.log("asd");
  }
   return (
     <>
-    <Grid container sx={{}}>
-    <Grid item xs={6} textAlign={"start"} sx={{}}>
+    <Grid container>
+    <Grid item xs={6} textAlign={"start"}>
     <Typography variant="h6" fontWeight="bold" >
      {headerText}
       </Typography>
