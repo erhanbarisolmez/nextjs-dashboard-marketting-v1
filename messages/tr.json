@@ -52,7 +52,7 @@
   "user": "KULLANICI",
   "email": "E-POSTA",
   "role": "ROLÜ",
-  "pending": "Askıda olması",
+  "pending": "Askıda",
   "inactive": "Etkin değil",
   "active": "Aktif",
   "admin": "Yönetici",
@@ -100,5 +100,8 @@
   "by-placing-an-order-you-agree-to-our-terms-of-service-and-privacy-policy-choose-the-best-plan-to-fit-your-needs": "Sipariş vererek Hizmet Şartlarımızı ve Gizlilik Politikamızı kabul etmiş olursunuz. \nİhtiyaçlarınıza en uygun planı seçin.",
   "a-simple-start-for-everyone": "Herkes için basit bir başlangıç",
   "month": "/ay",
-  "change-plan": "PLAN DEĞİŞTİR"
+  "change-plan": "PLAN DEĞİŞTİRf",
+  "approved": "Onaylı",
+  "in-process": "Süreçte",
+  "rejected": "Reddedilmiş"
 }

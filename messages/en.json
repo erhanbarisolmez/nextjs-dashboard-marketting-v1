@@ -100,5 +100,8 @@
   "by-placing-an-order-you-agree-to-our-terms-of-service-and-privacy-policy-choose-the-best-plan-to-fit-your-needs": "By placing an order, you agree to our Terms of Service and Privacy Policy. Choose the best plan to fit your needs.",
   "a-simple-start-for-everyone": "A simple start for everyone",
   "month": "/month",
-  "change-plan": "CHANGE PLAN"
+  "change-plan": "CHANGE PLAN",
+  "approved": "Approved",
+  "in-process": "In Process",
+  "rejected": "Rejected"
 }

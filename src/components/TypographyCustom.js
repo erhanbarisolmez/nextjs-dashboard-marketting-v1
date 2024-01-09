@@ -4,12 +4,14 @@ export const TypographyCustom = (props) => {
     variant,
     sx,
     text,
-    icon
+    icon,
+    ...otherProps
   } = props;
   return (
     <Typography
       variant={variant}
       sx={sx}
+      {...otherProps}
     >
       {icon}{text}
     </Typography>

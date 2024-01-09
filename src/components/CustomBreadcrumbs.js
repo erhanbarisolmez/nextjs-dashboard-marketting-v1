@@ -11,7 +11,6 @@ export default function CustomBreadcrumbs() {
   function handleClick(event,href) {
     event.preventDefault(event, href);
     console.info('You clicked a breadcrumb.', href);
-    // router.push(href)
   }
   
   const breadcrumbs = [

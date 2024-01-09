@@ -24,6 +24,7 @@
     "@mui/x-charts": "^6.18.2",
     "@tremor/react": "^3.12.0",
     "apexcharts": "^3.44.2",
+    "material-ui-popup-state": "^5.0.10",
     "next": "14.0.3",
     "next-intl": "^3.4.0",
     "node-fetch": "^2.6.1",
