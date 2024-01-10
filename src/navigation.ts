@@ -20,6 +20,30 @@ export const pathnames = {
   '/profile':{
     en:'/profile',
     tr:'/profil'
+  },
+  '/products':{
+    en:'/products',
+    tr:'/urunler'
+  },
+  '/categories':{
+    en:'/categories',
+    tr:'/kategoriler'
+  },
+  '/add-product':{
+    en:'/add-product',
+    tr:'/urun-ekle'
+  },
+  '/edit-product':{
+    en:'/edit-product',
+    tr:'/urun-duzenle'
+  },
+  '/add-category':{
+    en:'/add-category',
+    tr:'/kategori-ekle'
+  },
+  '/edit-category':{
+    en:'/edit-category',
+    tr:'/kategori-duzenle'
   }
 
 } satisfies Pathnames<typeof locales>;

@@ -5,8 +5,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { usePathname } from 'next/navigation';
 
-export default function CustomBreadcrumbs() {
-
+export default function CustomBreadcrumbs(props) {
+  const {breadcrumbsText1, breadcrumbsText2, breadcrumbsText3} = props;
   const pathname = usePathname();
   function handleClick(event,href) {
     event.preventDefault(event, href);
@@ -15,7 +15,7 @@ export default function CustomBreadcrumbs() {
   
   const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/dashboard" onClick={() => handleClick}>
-      Home
+      {breadcrumbsText1}
     </Link>,
     <Link
       underline="hover"
@@ -24,10 +24,11 @@ export default function CustomBreadcrumbs() {
       href="notification"
       onClick={() => handleClick}
     >
-      e-Commerce
+      {breadcrumbsText2}
     </Link>,
     <Typography key="3" color="text.primary">
-      {pathname.replace("/en/" || "/tr/", " ")}
+      {breadcrumbsText3}
+      {/* {pathname.replace(/^\/(tr|en)\//, '')} */}
     </Typography>,
   ];
 

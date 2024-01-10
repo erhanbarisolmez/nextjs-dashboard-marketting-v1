@@ -5,6 +5,7 @@ export const TypographyCustom = (props) => {
     sx,
     text,
     icon,
+    text2,
     ...otherProps
   } = props;
   return (
@@ -12,8 +13,12 @@ export const TypographyCustom = (props) => {
       variant={variant}
       sx={sx}
       {...otherProps}
-    >
+    > 
       {icon}{text}
+      <Typography variant="caption" display={"block"} sx={{opacity:0.4}}>
+      {text2}
+      </Typography>
+     
     </Typography>
   )
 }

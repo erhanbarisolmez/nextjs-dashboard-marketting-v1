@@ -1,6 +1,6 @@
 import { TextField } from '@mui/material';
 const TextFieldCustom = (props) => {
-  const { id, label, value, variant, placeholder, onChange,select } = props;
+  const { id, label, value, variant, placeholder, onChange,select, ...otherProps} = props;
   return (
     <TextField
       id={id}
@@ -10,7 +10,8 @@ const TextFieldCustom = (props) => {
       variant={variant}
       placeholder={placeholder}
       onChange={onChange}
-      fullWidth 
+      fullWidth
+      {...otherProps}
       />
   )
 }

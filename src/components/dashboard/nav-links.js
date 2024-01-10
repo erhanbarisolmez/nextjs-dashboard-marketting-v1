@@ -14,7 +14,7 @@ import { Fragment, useState } from "react";
 const NavLinks = () => {
   const pathname = usePathname();
   const [currentLanguage, setCurrentLanguage] = useState(
-    pathname.startsWith("/en") ? "en" : "tr"
+    pathname.startsWith("/en") ? "tr" : "en"
   );
   const [isECommerceMenuOpen, setECommerceMenuOpen] = useState(false);
 
@@ -94,7 +94,10 @@ const NavLinks = () => {
                                   borderRadius: 3,
                                   color: 'blue',
                                   fontWeight: '600',
+                                  WebkitTextDecorationLine:'none'
                                 },
+                                ":active" : {
+                                }
                         
                               }}>
                                 {item}

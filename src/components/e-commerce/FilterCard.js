@@ -8,16 +8,29 @@ import SwitchLabels from '../SwitchLabels';
 import { TypographyCustom } from '../TypographyCustom';
 
 const FilterCard = (props) => {
-  const { statusOptions, value, onChange } = props;
+  const {
+    variant = "subtitle2",
+    headerText,
+    backgroundColor = palette.grey[50],
+    borderColor = palette.grey[300],
+    statusOptions,
+    value,
+    onChange,
+    filterCardOptionStatus,
+    autoCompleteLabel,
+    filterCardHeaderCheckBox,
+    filterCardCheckBoxText1,
+    filterCardCheckBoxText2,
+    filterCardHeaderSwitch,
+    filterCardStatusTextSwitch,
+    filterCardTextButton1,
+    filterCardTextButton2,
+    ...otherProps } = props;
+
   const subtitle1 = variants.typography.subtitle1;
   const subtitle2 = variants.typography.subtitle2;
   const caption = variants.typography.caption;
-  const {
-    variant = "subtitle2",
-    text = "Filter Options",
-    backgroundColor = palette.grey[50],
-    borderColor = palette.grey[300],
-    ...otherProps } = props;
+
   return (
     <Grid fluid item xs={12} sx={{
       display: 'flex',
@@ -38,7 +51,7 @@ const FilterCard = (props) => {
         <Grid item xs={12} >
           <TypographyCustom
             variant={subtitle1}
-            text={text}
+            text={headerText}
             fontWeight="700"
           />
         </Grid>
@@ -50,7 +63,7 @@ const FilterCard = (props) => {
         <Grid item xs={12} >
           <TypographyCustom
             variant={subtitle2}
-            text="Status:"
+            text={filterCardOptionStatus}
             fontWeight="600"
           />
         </Grid>
@@ -62,7 +75,7 @@ const FilterCard = (props) => {
             options={statusOptions}
             value={value}
             onChange={onChange}
-            label="Select option"
+            label={autoCompleteLabel}
             sx={{
               backgroundColor: palette.grey[100]
             }}
@@ -72,34 +85,34 @@ const FilterCard = (props) => {
         <Grid item xs={12}>
           <TypographyCustom
             variant={subtitle2}
-            text="Member Type: "
+            text={filterCardHeaderCheckBox}
             fontWeight={600}
           />
         </Grid>
         {/* MEMBER TYPE CONTENT - CHECKBOX */}
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', color: 'gray' }}>
           <ControlledCheckbox />
-          <TypographyCustom text="Author" variant={caption} />
+          <TypographyCustom text={filterCardCheckBoxText1} variant={caption} />
           <ControlledCheckbox />
-          <TypographyCustom text="Customer" variant={caption} />
+          <TypographyCustom text={filterCardCheckBoxText2} variant={caption} />
         </Grid>
         {/* NOTIFICATIONS CONTENT - HEADER */}
         <Grid item xs={12}>
           <TypographyCustom
             variant={subtitle2}
-            text="Notifications: "
+            text={filterCardHeaderSwitch}
             fontWeight={600}
           />
           {/* NOTIFICATIONS CONTENT - SWITCHER */}
           <SwitchLabels
-            label="Enabled"
+            label={filterCardStatusTextSwitch}
           />
         </Grid>
-        {/* BOTTOM BUTTON - RESET & APPLY */}
+        {/* BOTTOM BUTTON */}
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'end' }}>
           {/* BOTTOM BUTTON - RESET */}
-          <CustomButton buttonText="reset"
-          onClick={() => alert('Reset Button Clicked')}
+          <CustomButton buttonText={filterCardTextButton1}
+            onClick={() => alert('Reset Button Clicked')}
             sx={{
               bgcolor: palette.grey[500],
               ':hover': {
@@ -108,9 +121,9 @@ const FilterCard = (props) => {
             }}
           />
           {/* BOTTOM BUTTON - APPLY */}
-          <CustomButton buttonText="apply"
-          onClick={() => alert('Apply Button Clicked')}
-          sx={{
+          <CustomButton buttonText={filterCardTextButton2}
+            onClick={() => alert('Apply Button Clicked')}
+            sx={{
               ml: 1,
               bgcolor: palette.lightBlue[500],
               ':hover': {

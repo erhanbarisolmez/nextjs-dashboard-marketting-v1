@@ -5,30 +5,58 @@ import FilterIcon from '@mui/icons-material/FilterAlt';
 import { Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import CustomButton from "./CustomButton";
+import CreateCard from "./e-commerce/CreateCard";
 import FilterCard from "./e-commerce/FilterCard";
 
 
-const PageHeader = ({ headerText, statusOptions }) => {
+const PageHeader = ({
+  headerText,
+  statusOptions,
+  filterButtonText,
+  createButtonText,
+  filterCardHeaderText,
+  filterCardOptionStatus,
+  autoCompleteLabel,
+  filterCardHeaderCheckBox,
+  filterCardCheckBoxText1,
+  filterCardCheckBoxText2,
+  filterCardHeaderSwitch,
+  filterCardStatusTextSwitch,
+  filterCardTextButton1,
+  filterCardTextButton2,
+}) => {
+
   const [isFilterCardOpen, setIsFilterCardOpen] = useState(false);
-  const [ status, setStatus]  = useState("");
+  const [isCreateCardOpen, setIsCreateCardOpen] = useState(false);
+  const handleClose = () => setIsCreateCardOpen(false);
+
+  const [status, setStatus] = useState("");
   const contained = variants.button.contained;
-  
+
   const onClickFilteredButton = () => {
     setIsFilterCardOpen(!isFilterCardOpen);
   }
+  
+  const onClickCreateButton = () => {
+    setIsCreateCardOpen(!isCreateCardOpen);
+  
+  }
+
   return (
     <>
       <Grid container>
+        {/* HEADER TEXT */}
         <Grid item xs={6} textAlign={"start"}>
           <Typography variant="h6" fontWeight="bold" >
             {headerText}
           </Typography>
         </Grid>
+        {/* FILTER BUTTON */}
         <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'end' }}>
           <CustomButton
             variant={contained}
             onClick={onClickFilteredButton}
-            buttonText="Filter"
+            buttonText={filterButtonText}
             startIcon={<FilterIcon sx={{ color: palette.grey[300], fontSize: "12px" }} />}
             sx={{
               bgcolor: palette.grey[500],
@@ -37,14 +65,29 @@ const PageHeader = ({ headerText, statusOptions }) => {
               }
             }}
           />
+          {/* FILTER CARD */}
           {isFilterCardOpen && (
-            <FilterCard 
-              statusOptions = {statusOptions}
-              value = {status}
-              onChange = {(e,newValue)=> setStatus(newValue)}
+            <FilterCard
+              headerText={filterCardHeaderText}
+              filterCardOptionStatus={filterCardOptionStatus}
+              autoCompleteLabel={autoCompleteLabel}
+              statusOptions={statusOptions}
+              filterCardHeaderCheckBox={filterCardHeaderCheckBox}
+              filterCardCheckBoxText1={filterCardCheckBoxText1}
+              filterCardCheckBoxText2={filterCardCheckBoxText2}
+              filterCardHeaderSwitch={filterCardHeaderSwitch}
+              filterCardStatusTextSwitch={filterCardStatusTextSwitch}
+              filterCardTextButton1={filterCardTextButton1}
+              filterCardTextButton2={filterCardTextButton2}
+              value={status}
+              onChange={(e, newValue) => setStatus(newValue)}
             />
           )}
-          <CustomButton variant={contained} onClick={onClickFilteredButton} buttonText="Create"
+          {/* CREATE BUTTON */}
+          <CustomButton
+            variant={contained}
+            onClick={onClickCreateButton}
+            buttonText={createButtonText}
             sx={{
               ml: 1,
               bgcolor: palette.lightBlue[500],
@@ -52,12 +95,15 @@ const PageHeader = ({ headerText, statusOptions }) => {
                 bgcolor: palette.lightBlue[700]
               }
             }} />
-
+          {/* CREATE CARD */}
+          {isCreateCardOpen &&(
+            <CreateCard 
+            openModal={onClickCreateButton}
+            handleClose={handleClose}
+            />
+          )}
         </Grid>
-
       </Grid>
-
-
     </>
   )
 }
