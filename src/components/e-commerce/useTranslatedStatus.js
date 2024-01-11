@@ -11,3 +11,15 @@ const useTranslatedStatus = () => {
 }
 
 export default useTranslatedStatus
+
+export const useProductStatus = () => {
+  const t = useTranslations();
+
+  const status = [
+    {label: t('all')},
+    {label: t('published')},
+    {label: t('scheduled')},
+    {label: t('inactive')}
+  ]
+  return status;
+}

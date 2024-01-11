@@ -122,5 +122,8 @@
   "add-product": "Ürün Ekle",
   "categories": "Kategoriler",
   "edit-category": "Kategoriyi Düzenle",
-  "edit-product": "Ürünü Düzenle"
+  "edit-product": "Ürünü Düzenle",
+  "all": "Tüm",
+  "published": "Yayınlanan",
+  "scheduled": "planlanmış"
 }

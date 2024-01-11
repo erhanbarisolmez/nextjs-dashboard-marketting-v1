@@ -1,3 +1,4 @@
+'use client'
 import { Autocomplete, TextField } from '@mui/material';
 
 export default function AutoCompleteCustom(props) {

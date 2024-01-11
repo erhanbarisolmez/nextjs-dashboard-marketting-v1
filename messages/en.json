@@ -122,5 +122,8 @@
   "add-product": "Add Product",
   "categories": "Categories",
   "edit-category": "Edit Category",
-  "edit-product": "Edit Product"
+  "edit-product": "Edit Product",
+  "all": "All",
+  "published": "Published",
+  "scheduled": "Scheduled"
 }

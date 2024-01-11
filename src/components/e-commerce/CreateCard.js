@@ -49,7 +49,7 @@ export default function CreateCard({ openModal, handleClose }) {
               <Divider orientation='horizontal' />
             </Grid>
             { /* CONTENT */}
-            <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
+            <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row', }}>
               {/* CONTENT LEFT - STEPPER  */}
               <Grid item xs={4}>
                 <VerticalLinearStepper />
@@ -63,9 +63,8 @@ export default function CreateCard({ openModal, handleClose }) {
                 <Grid item xs={12}>
                   <TypographyCustom text="Category" fontWeight="600" variant={subtitle2} mt={5} />
                 </Grid>
-                <Grid container gap={2} display={'flex'} flexDirection={"row"} justifyContent={"flex-start"}>
-
-                
+                <Grid item xs={12}>
+                    
                     <CheckBoxContent
                       icon={<CompassIcon fontSize='large'  />}
                       text1="Quick Online Courses"
@@ -85,11 +84,11 @@ export default function CreateCard({ openModal, handleClose }) {
                     text1="Full Intro Training"
                     text2="Creating a clear text structure copywriting"
                   />
+                 
 
                 </Grid>
               </Grid>
             </Grid>
-
           </Grid>
         </Box>
       </Modal>
@@ -102,14 +101,18 @@ export const CheckBoxContent = (props) => {
   const { icon, text1, text2, ...otherProps } = props;
   return (
     <>
+    <Grid container>
     <Grid item xs={12}>
       <Divider />
     </Grid>
+    <Grid item xs={12} display={'flex'} justifyContent={'space-between'} p={2}>
       <TypographyCustom icon={icon} { ...otherProps}  />
       <TypographyCustom variant="subtitle2" fontWeight={600}
         text={text1}
         text2={text2} />
       <ControlledCheckbox  />
+      </Grid>
+      </Grid>
     </>
   )
 }
