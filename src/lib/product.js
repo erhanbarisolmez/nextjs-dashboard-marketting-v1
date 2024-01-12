@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 export  class IProductService{
-  getProduct(){Promise};
+  async getProduct(){[]};
 }
 
 export default class ProductService  extends IProductService{

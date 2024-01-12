@@ -1,12 +1,20 @@
-'use client'
 import { Grid, Paper } from '@mui/material';
 import ProductTableContent from './ProductTableContent';
 import TableHeader from './TableHeader';
-const ProductTable = (props) => {
+const ProductTable = async(props) => {
   const {
     productOptions,
     autoCompleteLabel
+    
   } = props;
+  
+  const status = {
+    published : "Published",
+    inactive : "Inactive",
+    scheduled: "Scheduled"
+  }  
+
+
   return (
     <Grid container mt={3}>
       <Grid item xs={12}>
@@ -17,7 +25,9 @@ const ProductTable = (props) => {
             autoCompleteLabel = {autoCompleteLabel}
             />
             {/* PRODUCT TABLE CONTENT */}
-            <ProductTableContent />
+            <ProductTableContent 
+              status = {status}
+            />
       
         </Paper>
       </Grid>

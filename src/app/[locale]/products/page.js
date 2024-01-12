@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 const ProductPage = () => {
   const status = useTranslatedStatus();
   const productStatus = useProductStatus();
+  
   const t = useTranslations();
   return (
     <>
