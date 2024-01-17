@@ -1,7 +1,7 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
-import ProductTable from "@/components/e-commerce/ProductTable";
-import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/useTranslatedStatus";
+import ProductTable from "@/components/e-commerce/products/ProductTable";
+import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 const ProductPage = () => {

@@ -5,8 +5,8 @@ import FilterIcon from '@mui/icons-material/FilterAlt';
 import { Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import CustomButton from "./CustomButton";
-import CreateCard from "./e-commerce/CreateCard";
-import FilterCard from "./e-commerce/FilterCard";
+import CreateCard from "./e-commerce/products/CreateCard";
+import FilterCard from "./e-commerce/products/FilterCard";
 
 
 const PageHeader = ({
