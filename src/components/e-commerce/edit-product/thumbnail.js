@@ -28,7 +28,7 @@ const Thumbnail = () => {
           </Grid>
           </Grid>
 
-          <Grid item xs={12} mt={2}>
+          <Grid item xs={12} mt={2} mb={3}>
             <TypographyCustom 
             variant="subtitle2"
               text = "Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted"

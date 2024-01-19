@@ -8,6 +8,7 @@ import SearchInput from '../../SearchInput'
 const TableHeader = (props) => {
   const {autoCompleteLabel, productOptions} = props;
   const [status, setStatus] = useState();
+  const filterProductOptions = productOptions.filter(option => option.label !=='Draft');
 
   return (
     <>
@@ -31,7 +32,7 @@ const TableHeader = (props) => {
       }
     }}>
       <AutoCompleteCustom
-        options={productOptions}
+        options={filterProductOptions}
         value={status}
         label={autoCompleteLabel}
         size="small"

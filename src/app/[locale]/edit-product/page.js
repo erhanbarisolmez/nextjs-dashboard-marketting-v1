@@ -1,11 +1,12 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import EditContent from '@/components/e-commerce/edit-product/edit-content';
-import useTranslatedStatus from "@/components/e-commerce/products/useTranslatedStatus";
+import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 const EditProductPage = () => {
   const status = useTranslatedStatus();
+  const productStatus = useProductStatus();
    const t = useTranslations();
  
   return (
@@ -28,7 +29,10 @@ const EditProductPage = () => {
       filterCardTextButton2= {t('apply')}
     />
     <CustomBreadcrumbs breadcrumbsText1 = {t('home')} breadcrumbsText2 = {t('e-commerce')} breadcrumbsText3 = {t('edit-product')}/>
-      <EditContent />
+      
+      <EditContent 
+        statusOptions = {productStatus}
+      />
     </Container>
 
     </>

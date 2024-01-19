@@ -18,8 +18,9 @@ export const useProductStatus = () => {
   const status = [
     {label: t('all')},
     {label: t('published')},
+    {label: t('draft')},
     {label: t('scheduled')},
-    {label: t('inactive')}
+    {label: t('inactive')},
   ]
   return status;
 }

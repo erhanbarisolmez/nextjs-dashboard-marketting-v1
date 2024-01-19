@@ -1,15 +1,32 @@
+'use client'
 import AutoCompleteCustom from '@/components/AutoCompleteCustom';
 import { TypographyCustom } from '@/components/TypographyCustom';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Container, Grid } from '@mui/material';
-export const Status = () => {
+import { useState } from 'react';
+export const Status = ({ statusOptions }) => {
+  const [status, setStatus] = useState();
+
+  const filteredStatusOptions = statusOptions.filter(option => option.label !== 'All');
+
+  const statusColors = {
+    Published: '#61FFB1',
+    Draft: '#F5F5F5', // Örnek renk
+    Scheduled: '#FFA500', // Örnek renk
+    Inactive: '#BDBDBD', // Örnek renk
+    default: '#61FFB1',
+  };
+  // Status'a göre ikon rengini dinamik olarak belirle
+  const iconColor = statusColors[status] || statusColors.default;
+
+
   return (
     <Container>
       <Grid container spacing={2} >
         <Grid item xs={12} mt={6} sx={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent:'center'
+          justifyContent: 'center'
 
         }}>
           <Grid container>
@@ -26,13 +43,22 @@ export const Status = () => {
               alignItems: 'center',
               justifyContent: 'end'
             }}>
-              <CircleIcon fontSize='small' />
+              <CircleIcon fontSize='small' sx={{
+                color:iconColor
+            }} />
             </Grid>
           </Grid>
 
 
           <Grid item xs={12}>
-            <AutoCompleteCustom />
+            <AutoCompleteCustom
+              options={filteredStatusOptions}
+              value={status}
+              onChange={(e, newValue) => {
+                setStatus(newValue.label);
+              }}
+
+            />
           </Grid>
           <Grid item xs={12}>
             <TypographyCustom

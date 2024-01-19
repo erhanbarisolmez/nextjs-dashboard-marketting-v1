@@ -125,5 +125,6 @@
   "edit-product": "Edit Product",
   "all": "All",
   "published": "Published",
-  "scheduled": "Scheduled"
+  "scheduled": "Scheduled",
+  "draft": "Draft"
 }

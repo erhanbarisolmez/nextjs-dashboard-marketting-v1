@@ -32,7 +32,7 @@ export const ProductDetails = () => {
           }}
           />
         </Grid>
-        <Grid item xs = {12}>
+        <Grid item xs = {12} mb={6}>
           <AutoCompleteTags />
 
         </Grid>
