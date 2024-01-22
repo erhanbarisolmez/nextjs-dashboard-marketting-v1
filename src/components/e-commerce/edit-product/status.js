@@ -3,23 +3,30 @@ import AutoCompleteCustom from '@/components/AutoCompleteCustom';
 import { TypographyCustom } from '@/components/TypographyCustom';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Container, Grid } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const statusColors = {
+  Published: '#61FFB1',
+  Draft: '#F5F5F5', // Örnek renk
+  Scheduled: '#FFA500', // Örnek renk
+  Inactive: '#BDBDBD', // Örnek renk
+  default: '#221D1D'
+};
 export const Status = ({ statusOptions }) => {
   const [status, setStatus] = useState();
+  const [iconColor, setIconColor] = useState('#221D1D'); // Initialize with default color
 
   const filteredStatusOptions = statusOptions.filter(option => option.label !== 'All');
-
-  const statusColors = {
-    Published: '#61FFB1',
-    Draft: '#F5F5F5', // Örnek renk
-    Scheduled: '#FFA500', // Örnek renk
-    Inactive: '#BDBDBD', // Örnek renk
-    default: '#61FFB1',
-  };
   // Status'a göre ikon rengini dinamik olarak belirle
-  const iconColor = statusColors[status] || statusColors.default;
+  useEffect(() => {
+    const newIconColor = statusColors[status] || statusColors.default;
+    setIconColor(newIconColor);
+  }, [status]);
 
-
+  const handleStatusChange = (newStatus) => {
+    setStatus(newStatus);
+  }
+  
   return (
     <Container>
       <Grid container spacing={2} >
@@ -54,9 +61,7 @@ export const Status = ({ statusOptions }) => {
             <AutoCompleteCustom
               options={filteredStatusOptions}
               value={status}
-              onChange={(e, newValue) => {
-                setStatus(newValue.label);
-              }}
+              onChange={handleStatusChange}
 
             />
           </Grid>
@@ -71,4 +76,12 @@ export const Status = ({ statusOptions }) => {
       </Grid>
     </Container>
   )
+}
+
+AutoCompleteCustom.prototype.handleChange = (event) => {
+  const newStatus = event.target.value;
+  setStatus(newStatus);
+
+  const newIconColor = statusColors[newStatus] || statusColors.default;
+  setIconColor(newIconColor);
 }

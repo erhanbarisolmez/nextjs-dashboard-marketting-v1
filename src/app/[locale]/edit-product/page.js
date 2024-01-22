@@ -4,7 +4,8 @@ import EditContent from '@/components/e-commerce/edit-product/edit-content';
 import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
-const EditProductPage = () => {
+const EditProductPage = ({params}) => {
+  console.log(params);
   const status = useTranslatedStatus();
   const productStatus = useProductStatus();
    const t = useTranslations();
@@ -34,7 +35,6 @@ const EditProductPage = () => {
         statusOptions = {productStatus}
       />
     </Container>
-
     </>
   )
 }

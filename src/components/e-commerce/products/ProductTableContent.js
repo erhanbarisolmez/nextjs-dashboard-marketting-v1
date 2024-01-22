@@ -15,8 +15,8 @@ const ProductTableContent = ({ status }) => {
   }
 
   const action = [
-    "edit",
-    "delete"
+   { label:"edit"},
+   { label:"delete"}
   ];
 
 
@@ -130,17 +130,16 @@ const ProductTableContent = ({ status }) => {
     { id: 9, icon: icons.computer, product: "Product", sku: '03639002', qty: 38, price: "36.00", rating: 3, status: status.scheduled },
   ];
 
-  const handleActionChange = (newAction, selectedValue, selectedRowId) => {
-    const selectedRow = rows.find((row) => row.id === selectedRowId);
-
+  const handleActionChange = (newAction, selectedValue, selectedRowId,) => {
+    const select = rows.map((row) => row.id || row.icon || row.price || row.product ||row.qty || row.rating || row.sku || row.status);
       if (newAction === "edit") {
         // Navigate to the edit page using history.push   
-        router.push(`edit-product`);
-        console.log("edit")
+        router.push(`edit-product/${select}`);
+        console.log("edit", newAction)
 
       } else if (newAction === "delete") {
         // Handle the delete action
-        handleDelete(selectedRowId);
+        handleDelete(select.id);
         console.log("delete")
       }
   };

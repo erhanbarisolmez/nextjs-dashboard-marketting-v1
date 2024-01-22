@@ -35,7 +35,7 @@ const EditProductContent = ({statusOptions}) => {
 
       <Grid item xs={12} md={9} >
         <Card>
-          a
+          a 
         </Card>
       </Grid>
 

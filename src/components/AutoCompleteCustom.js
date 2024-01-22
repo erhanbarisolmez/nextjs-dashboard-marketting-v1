@@ -4,11 +4,9 @@ import { Autocomplete, TextField } from '@mui/material';
 export default function AutoCompleteCustom(props) {
   const { options, sx,label, value, onChange,rows, ...otherProps} = props;
 
-  const handleChange = (event, selectedValue, selectedRowId) => {
-    // Find the corresponding row object based on the selected value
+  const handleChange = (event, selectedValue, selectedRowId, id) => {
 
-    // Call the parent component's onChange handler with the selected value and row object
-    onChange(selectedValue, selectedRowId);
+    onChange(selectedValue?.label, selectedRowId,id);
     console.log('selected value: ' , selectedValue);
     console.log('selected row: ', selectedRowId);
   };
