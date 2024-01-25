@@ -1,10 +1,15 @@
 import Card from '@/components/e-commerce/Card'
+import { variants } from '@/utils/variants'
 import { Grid } from '@mui/material'
+import TabsBasic from '../TabsBasic'
 import { AverageDailySales } from './average-daily-sales'
 import { ProductDetails } from './product-details'
 import { Status } from './status'
+import { TabPanelContent } from './tabPanelContent'
 import Thumbnail from './thumbnail'
 const EditProductContent = ({statusOptions}) => {
+  
+  const tabsVariant = variants.tabsBasic.plain;
 
   return (
 
@@ -33,10 +38,18 @@ const EditProductContent = ({statusOptions}) => {
         </Card>
       </Grid>
 
-      <Grid item xs={12} md={9} >
-        <Card>
-          a 
-        </Card>
+      <Grid item xs={12} sm={12} md={9}    >
+        <TabsBasic 
+          tab1="General"
+          tab2="Advanced"
+          tab3="Reviews"
+          size="md"
+          disableUnderline={true}
+          variant={tabsVariant}
+          tabPanel1={
+            <TabPanelContent />
+          }
+        />
       </Grid>
 
     </Grid>

@@ -43,7 +43,7 @@ const card = (
 export default function OutlinedCard({children, ...otherProps}) {
   return (
     <Box sx={{ }}  {...otherProps}>
-      <Card variant="outlined" ali sx={{ minWidth: 275, minHeight:275}}{...otherProps} >{children}</Card>
+      <Card variant="outlined" sx={{ minWidth: 275, minHeight:200}}{...otherProps} >{children}</Card>
     </Box>
   );
 }

@@ -131,7 +131,7 @@ const ProductTableContent = ({ status }) => {
   ];
 
   const handleActionChange = (newAction, selectedValue, selectedRowId,) => {
-    const select = rows.map((row) => row.id || row.icon || row.price || row.product ||row.qty || row.rating || row.sku || row.status);
+    const select = rows.map((row) => row.id);
       if (newAction === "edit") {
         // Navigate to the edit page using history.push   
         router.push(`edit-product/${select}`);

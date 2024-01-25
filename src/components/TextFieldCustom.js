@@ -2,7 +2,7 @@ import { TextField } from '@mui/material';
 const TextFieldCustom = (props) => {
   const { id, label, value, variant, placeholder, onChange,select, ...otherProps} = props;
   return (
-    <TextField
+     <TextField
       id={id}
       label={label}
       select = {select}

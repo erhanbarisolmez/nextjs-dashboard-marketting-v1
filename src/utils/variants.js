@@ -18,5 +18,11 @@ export const variants={
     overline:"overline",
     button:"button",
     subtitle2:"subtitle2"
+  },
+  tabsBasic:{
+    plain: "plain",
+    outlined: "outlined",
+    soft: "soft",
+    solid:"solid"
   }
 }

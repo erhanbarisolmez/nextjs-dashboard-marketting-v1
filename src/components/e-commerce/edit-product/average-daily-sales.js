@@ -2,51 +2,40 @@ import SparklineChart from '@/components/SparklineChart'
 import { palette } from '@/style/color'
 import { Grid, Typography } from "@mui/joy"
 import { Container } from '@mui/material'
-export const AverageDailySales = (statusOptions) => {
+export const AverageDailySales = ({statusOptions}) => {
   const data = [10, 40, 50, 20, 10, 20, 50, 60, 50]
   return (
 
-    <Grid container spacing={2} >
+    <Grid container spacing={2}  >
       <Container>
-        <Grid item xs={12} sx={{ display: 'flex', mt: 6, width: '100%', }}>
-          <Grid item xs={1} sx={{
-            display: 'flex',
-            justifyContent: 'left',
-          }}>
+        <Grid item xs={7} sx={{  display:'flex', mt: 6,  justifyContent:'space-evenly',flexDirection:'row'}}>
             <Typography variant="plain" level="body-lg" sx={{
-              color: palette.grey[500]
+              color: palette.grey[500],
+              display:'flex',
             }}>
               $
             </Typography>
-
-          </Grid>
-          <Grid item xs={4} sx={{
-            width: '30%'
-          }}>
-            <Typography variant="plain" level="h1" >
+            <Typography variant="plain" level="h1" display={'flex'} >
               2,420
             </Typography>
-          </Grid>
-          <Grid item xs={7} sx={{
-
-            height: '100%',
-            alignItems: 'center',
-            justifyContent: 'start',
-            display: 'flex',
-            mt: 1,
-            width: '30%',
-          }}>
             <Typography variant="outlined" level="body-sm" sx={{
               backgroundColor: palette.lightGreen[50],
               color: palette.lightGreen[700],
               fontWeight: '600',
               borderRadius: "9px",
-              textAlign: 'left',
-
+              textAlign: 'center',
+              ml:0.3,
+              p:1,
+              width:'30%',height:'10px',
+              justifyContent:'center',
+              alignItems:'center',
+              display:'flex'
+            
             }}>
               ^ 2.6 %
             </Typography>
-          </Grid>
+
+
 
         </Grid>
         <Grid item xs={12}>

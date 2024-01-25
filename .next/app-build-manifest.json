@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[locale]/products/page": [
+    "/[locale]/edit-product/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/products/page.js"
+      "static/chunks/app/[locale]/edit-product/[slug]/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -15,16 +15,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/page.js"
-    ],
-    "/[locale]/edit-product/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/edit-product/page.js"
-    ],
-    "/[locale]/edit-product/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/edit-product/[slug]/page.js"
     ]
   }
 }

@@ -1,6 +1,14 @@
 import { Box, Grid, Typography } from '@mui/material';
 
-const GeneralCardHeader = ({ headerName, icon, headerTitle, percentile }) => {
+const GeneralCardHeader = ({
+  headerName,
+  icon,
+  headerTitle,
+  percentile,
+  colorHeaderName,
+  variantHeaderName,
+  fontWeightHeaderName
+}) => {
   // const arrowIcon = colorTitle && colorTitle.includes('-') ? <ArrowDownIcon /> : <ArrowUpIcon />;
   // const arrowColor = colorTitle && colorTitle.includes("-") ? palette.red[500] : "#5BFF94";
   return (
@@ -19,24 +27,24 @@ const GeneralCardHeader = ({ headerName, icon, headerTitle, percentile }) => {
             flexDirection: 'row',
           }}>
             <Grid item xs={12}>
-              <Typography variant='h5' fontWeight="bold" >
+              <Typography variant={variantHeaderName} fontWeight={fontWeightHeaderName} color={colorHeaderName} >
                 {headerName}
-               
+
               </Typography>
               <Typography variant='subtitle2'>
-          {headerTitle}
-          </Typography>
+                {headerTitle}
+              </Typography>
             </Grid>
             <Grid item xs={2} sx={{
               display: 'flex',
               justifyContent: 'end',
             }}>
-                <Typography variant='h6' display="flex" alignItems="center">
-                  {percentile} 
-                </Typography>
-                <Typography variant='h6' display="flex" alignItems="center">
-                 {icon}
-                </Typography>
+              <Typography variant='h6' display="flex" alignItems="center">
+                {percentile}
+              </Typography>
+              <Typography variant='h6' display="flex" alignItems="center">
+                {icon}
+              </Typography>
             </Grid>
           </Box>
         </Grid>
