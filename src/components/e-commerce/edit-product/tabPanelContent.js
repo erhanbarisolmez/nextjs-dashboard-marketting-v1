@@ -1,17 +1,25 @@
 'use client'
+import CustomButton from "@/components/CustomButton"
 import TextFieldCustom from "@/components/TextFieldCustom"
 import Card from "@/components/e-commerce/Card"
+import { palette } from '@/style/color'
+import { variants } from "@/utils/variants"
 import { Container, Grid } from "@mui/material"
 import { useEffect, useState } from "react"
 import InputFileUpload from "../InputFileUpload"
 import { TabHeader } from "../TabHeader"
+import TabsBasic from "../TabsBasic"
 import ExampleTextareaComment from "../TextArea"
 import { TooltipCustom } from "../Tooltip"
+import { NoDiscount } from "./noDiscount"
 export const TabPanelContent = () => {
   const [price, setPrice] = useState("199.99");
   const [productName, setProductName] = useState("Sample Product");
   const [errors, setErrors] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
+  const buttonVariant = variants.button.text;
+
+
 
   useEffect(() => {
     validateForm();
@@ -31,11 +39,12 @@ export const TabPanelContent = () => {
     setErrors(errors);
     setIsFormValid(Object.keys(errors).length === 0);
   }
+
+  
   return (
     <>
       <Card>
         <Container >
-
           {/* GENERAL */}
           <TabHeader
             text="General"
@@ -137,7 +146,7 @@ export const TabPanelContent = () => {
             value={price}
             onChange={(event) => setPrice(event.target.value)}
           />
-           <TabHeader
+          <TabHeader
             level="body-xs"
             titleTextField="Set the product price."
             sxTitleTextField={{ opacity: 0.6 }}
@@ -145,23 +154,43 @@ export const TabPanelContent = () => {
           {errors.price &&
             <TabHeader level="body-xs" colorText={errors.price} />
           }
-          
-          <Grid item xs={12} display={'flex'} flexDirection={"row"} mt={6}>
-          <TabHeader 
-             headerTextFieldLevel="body-sm"
-             headerTextField="Discount Type "
-             headerTextFieldFontWeight="100"
-             sxHeaderTextField={{ fontWeight: 600 }}
-          />
-          <TooltipCustom 
-            title="Select a discount type that will be applied to this product"
-          
-          />
-          </Grid>
-         
 
-        </Container>
+          <Grid item xs={12} display={'flex'} flexDirection={"row"} mt={6}>
+            <TabHeader
+              headerTextFieldLevel="body-sm"
+              headerTextField="Discount Type "
+              headerTextFieldFontWeight="100"
+              sxHeaderTextField={{ fontWeight: 600 }}
+            />
+            <TooltipCustom
+              title="Select a discount type that will be applied to this product"
+            />
+          </Grid>
+          <TabsBasic
+            tab1="No Discount"
+            tab2="Percentage %"
+            tab3="Fixed Price"
+            tabPanel1={<NoDiscount />}
+            tabPanel2={2}
+            tabPanel3={3}
+
+          />
+
+        </Container>     
       </Card>
+      <TabHeader sx={{ mt: 48 }} />
+      <Grid item xs={12} display={'flex'} justifyContent={'end'}>
+       <CustomButton
+          variant = {buttonVariant}
+          buttonText = "Cancel"
+          sx={{bgcolor: palette.grey[100], color:palette.grey[900]}}
+        />
+        <CustomButton
+          buttonText = "Save Change"
+        
+          sx={{ml:2, bgcolor:palette.lightBlue[500]}}
+        />
+       </Grid>
     </>
   )
 }

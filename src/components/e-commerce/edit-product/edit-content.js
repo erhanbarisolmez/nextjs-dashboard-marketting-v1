@@ -1,3 +1,4 @@
+'use client'
 import Card from '@/components/e-commerce/Card'
 import { variants } from '@/utils/variants'
 import { Grid } from '@mui/material'
@@ -38,7 +39,7 @@ const EditProductContent = ({statusOptions}) => {
         </Card>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={9}    >
+      <Grid item xs={12} sm={12} md={9} >
         <TabsBasic 
           tab1="General"
           tab2="Advanced"
@@ -50,8 +51,9 @@ const EditProductContent = ({statusOptions}) => {
             <TabPanelContent />
           }
         />
+    
       </Grid>
-
+  
     </Grid>
   )
 }

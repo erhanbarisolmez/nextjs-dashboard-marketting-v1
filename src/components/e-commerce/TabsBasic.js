@@ -1,7 +1,9 @@
+'use client'
 import Tab from '@mui/joy/Tab';
 import TabList from '@mui/joy/TabList';
 import TabPanel from '@mui/joy/TabPanel';
 import Tabs from '@mui/joy/Tabs';
+import RadioButton from '../RadioButton';
 
 export default function TabsBasic({
   tab1,
@@ -12,16 +14,26 @@ export default function TabsBasic({
   tabPanel3,
   disableUnderline,
   variant,
+  radioButton,
   ...otherProps
 }) {
 
-
   return (
     <Tabs aria-label="Basic tabs" defaultValue={0} {...otherProps}>
-      <TabList disableUnderline={disableUnderline} variant={variant} >
-        <Tab>{tab1}</Tab>
-        <Tab>{tab2}</Tab>
-        <Tab>{tab3}</Tab>
+      <TabList disableUnderline={disableUnderline} variant={variant} radioButton={radioButton} >
+        {radioButton ? (
+          <>
+            <Tab><RadioButton />{tab1}</Tab> 
+            <Tab><RadioButton />{tab2}</Tab> 
+            <Tab><RadioButton />{tab3}</Tab> 
+          </>
+        ) : (
+          <>
+            <Tab>{tab1}</Tab>
+            <Tab>{tab2}</Tab>
+            <Tab>{tab3}</Tab>
+          </>
+        )}
       </TabList>
       <TabPanel value={0}>
         {tabPanel1}
