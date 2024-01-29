@@ -1,13 +1,15 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import EditContent from '@/components/e-commerce/edit-product/edit-content';
-import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
+import useTranslatedStatus, { useProductStatus, useProductTemplateStatus } from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 const EditProductPage = ({params}) => {
   console.log(params);
   const status = useTranslatedStatus();
   const productStatus = useProductStatus();
+  const productTemplateStatus = useProductTemplateStatus();
+
    const t = useTranslations();
  
   return (
@@ -33,6 +35,7 @@ const EditProductPage = ({params}) => {
       
       <EditContent 
         statusOptions = {productStatus}
+        productTemplateStatus = {productTemplateStatus}
       />
     </Container>
     </>

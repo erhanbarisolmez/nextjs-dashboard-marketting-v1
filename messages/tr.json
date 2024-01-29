@@ -126,5 +126,9 @@
   "all": "Tüm",
   "published": "Yayınlanan",
   "scheduled": "planlanmış",
-  "draft": "Taslak"
+  "draft": "Taslak",
+  "default-template": "Varsayılan şablon",
+  "electronics": "Elektronik",
+  "office-stationary": "Ofis Kırtasiye malzemeleri",
+  "fashion": "Moda"
 }

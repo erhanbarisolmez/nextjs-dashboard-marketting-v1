@@ -1,7 +1,7 @@
 {
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/notification/page": "app/[locale]/notification/page.js",
-  "/[locale]/profile/page": "app/[locale]/profile/page.js",
-  "/[locale]/edit-product/page": "app/[locale]/edit-product/page.js",
-  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js"
+  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js",
+  "/[locale]/products/page": "app/[locale]/products/page.js",
+  "/[locale]/categories/page": "app/[locale]/categories/page.js",
+  "/[locale]/edit-product/page": "app/[locale]/edit-product/page.js"
 }

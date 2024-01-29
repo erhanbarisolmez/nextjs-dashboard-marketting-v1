@@ -5,10 +5,11 @@ import { Grid } from '@mui/material'
 import TabsBasic from '../TabsBasic'
 import { AverageDailySales } from './average-daily-sales'
 import { ProductDetails } from './product-details'
+import { ProductTemplate } from './product-template'
 import { Status } from './status'
 import { TabPanelContent } from './tabPanelContent'
 import Thumbnail from './thumbnail'
-const EditProductContent = ({statusOptions}) => {
+const EditProductContent = ({statusOptions, productTemplateStatus}) => {
   
   const tabsVariant = variants.tabsBasic.plain;
 
@@ -23,9 +24,7 @@ const EditProductContent = ({statusOptions}) => {
 
         <Card mt={2} sx={{ height: 200 }}>
           <Status 
-          statusOptions={statusOptions}
-     
-          
+          statusOptions={statusOptions}          
           />
         </Card>
 
@@ -35,6 +34,12 @@ const EditProductContent = ({statusOptions}) => {
 
         <Card mt={2}>
           <AverageDailySales 
+          />
+        </Card>
+
+        <Card mt={2}>
+          <ProductTemplate 
+            productTemplateStatus={productTemplateStatus}
           />
         </Card>
       </Grid>
@@ -48,7 +53,7 @@ const EditProductContent = ({statusOptions}) => {
           disableUnderline={true}
           variant={tabsVariant}
           tabPanel1={
-            <TabPanelContent />
+            <TabPanelContent  productTemplateStatus ={productTemplateStatus}/>
           }
         />
     

@@ -7,7 +7,8 @@ import { useTranslations } from "next-intl";
 const EditCategoryPage = () => {
   const status = useTranslatedStatus();
    const t = useTranslations();
- 
+   const productTemplateStatus = useTranslatedStatus();
+
   return (
     <>
     <Container maxWidth="xl">

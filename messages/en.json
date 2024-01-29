@@ -126,5 +126,9 @@
   "all": "All",
   "published": "Published",
   "scheduled": "Scheduled",
-  "draft": "Draft"
+  "draft": "Draft",
+  "default-template": "Default template",
+  "electronics": "Electronics",
+  "office-stationary": "Office stationary",
+  "fashion": "Fashion"
 }

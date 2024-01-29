@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[locale]/edit-product/[slug]/page": [
+    "/[locale]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/edit-product/[slug]/page.js"
+      "static/chunks/app/[locale]/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -11,25 +11,20 @@
       "static/css/app/[locale]/layout.css",
       "static/chunks/app/[locale]/layout.js"
     ],
-    "/[locale]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
-    ],
     "/[locale]/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/dashboard/page.js"
     ],
-    "/[locale]/notification/page": [
+    "/[locale]/products/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/notification/page.js"
+      "static/chunks/app/[locale]/products/page.js"
     ],
-    "/[locale]/profile/page": [
+    "/[locale]/categories/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/profile/page.js"
+      "static/chunks/app/[locale]/categories/page.js"
     ],
     "/[locale]/edit-product/page": [
       "static/chunks/webpack.js",

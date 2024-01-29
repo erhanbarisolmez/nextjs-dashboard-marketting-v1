@@ -4,9 +4,9 @@ import { Autocomplete, TextField } from '@mui/material';
 export default function AutoCompleteCustom(props) {
   const { options, sx,label, value, onChange,rows, ...otherProps} = props;
 
-  const handleChange = (event, selectedValue, selectedRowId, id) => {
+  const handleChange = (event, selectedValue, selectedRowId, id, templateStatus) => {
 
-    onChange(selectedValue?.label, selectedRowId,id);
+    onChange(selectedValue?.label, selectedRowId,id, templateStatus);
     console.log('selected value: ' , selectedValue);
     console.log('selected row: ', selectedRowId);
   };
