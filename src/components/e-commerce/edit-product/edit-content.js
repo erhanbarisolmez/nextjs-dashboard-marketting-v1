@@ -3,49 +3,54 @@ import Card from '@/components/e-commerce/Card'
 import { variants } from '@/utils/variants'
 import { Grid } from '@mui/material'
 import TabsBasic from '../TabsBasic'
+import { AdvancedTabContent } from './advancedTabContent'
 import { AverageDailySales } from './average-daily-sales'
+import { GeneralTabContent } from './generalTabContent'
 import { ProductDetails } from './product-details'
 import { ProductTemplate } from './product-template'
+import { ReviewsTabContent } from './reviewsTabContent'
 import { Status } from './status'
-import { TabPanelContent } from './tabPanelContent'
 import Thumbnail from './thumbnail'
-const EditProductContent = ({statusOptions, productTemplateStatus}) => {
-  
+const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus }) => {
+
   const tabsVariant = variants.tabsBasic.plain;
 
   return (
 
-    <Grid container  spacing={2} mt={2}>
-
+    <Grid container spacing={2} mt={2}>
+      {/* LEFT CONTENT */}
       <Grid item xs={12} lg={3}>
+        {/*THUMBNAIL  */}
         <Card >
-          <Thumbnail />
+          <Thumbnail
+          />
         </Card>
-
+        {/*STATUS  */}
         <Card mt={2} sx={{ height: 200 }}>
-          <Status 
-          statusOptions={statusOptions}          
+          <Status
+            statusOptions={statusOptions}
           />
         </Card>
-
+        {/*PRODUCT DETAILS  */}
         <Card mt={2}>
-          <ProductDetails  />
-        </Card>
-
-        <Card mt={2}>
-          <AverageDailySales 
+          <ProductDetails
           />
         </Card>
-
+        {/*AVERAGE DAILY SALES  */}
         <Card mt={2}>
-          <ProductTemplate 
+          <AverageDailySales
+          />
+        </Card>
+        {/*PRODUCT TEMPLATE  */}
+        <Card mt={2}>
+          <ProductTemplate
             productTemplateStatus={productTemplateStatus}
           />
         </Card>
       </Grid>
-
+      {/* RIGHT CONTENT - TAB PANEL   */}
       <Grid item xs={12} sm={12} md={9} >
-        <TabsBasic 
+        <TabsBasic
           tab1="General"
           tab2="Advanced"
           tab3="Reviews"
@@ -53,12 +58,21 @@ const EditProductContent = ({statusOptions, productTemplateStatus}) => {
           disableUnderline={true}
           variant={tabsVariant}
           tabPanel1={
-            <TabPanelContent  productTemplateStatus ={productTemplateStatus}/>
-          }
+            <GeneralTabContent
+              productTemplateStatus={productTemplateStatus}
+              taxStatus={taxStatus}
+            />}
+          tabPanel2={
+            <AdvancedTabContent 
+            
+            />}
+          tabPanel3={
+            <ReviewsTabContent
+             />}
         />
-    
+
       </Grid>
-  
+
     </Grid>
   )
 }

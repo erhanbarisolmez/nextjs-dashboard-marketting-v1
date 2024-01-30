@@ -130,5 +130,8 @@
   "default-template": "Default template",
   "electronics": "Electronics",
   "office-stationary": "Office stationary",
-  "fashion": "Fashion"
+  "fashion": "Fashion",
+  "tax-free": "Tax Free",
+  "taxable-goods": "Taxable Goods",
+  "downloadable-product": "Downloadable Product"
 }

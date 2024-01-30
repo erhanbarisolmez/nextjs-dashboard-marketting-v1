@@ -130,5 +130,8 @@
   "default-template": "Varsayılan şablon",
   "electronics": "Elektronik",
   "office-stationary": "Ofis Kırtasiye malzemeleri",
-  "fashion": "Moda"
+  "fashion": "Moda",
+  "tax-free": "Vergisiz",
+  "taxable-goods": "Vergiye tabi ürünler",
+  "downloadable-product": "İndirilebilir Ürün"
 }

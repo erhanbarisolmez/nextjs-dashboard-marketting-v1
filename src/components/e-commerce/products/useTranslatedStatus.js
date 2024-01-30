@@ -35,3 +35,13 @@ export const useProductTemplateStatus = () => {
   ]
   return status;
 }
+
+export const useTaxStatus = () => {
+  const t= useTranslations();
+  const status = [
+    { label: t('tax-free')},
+    { label: t('taxable-goods') },
+    { label: t('downloadable-product') },
+  ]
+  return status;
+}

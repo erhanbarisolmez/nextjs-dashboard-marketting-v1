@@ -3,7 +3,7 @@ import { palette } from '@/style/color'
 import { Grid, Typography } from "@mui/joy"
 import { Container } from '@mui/material'
 export const AverageDailySales = ({statusOptions}) => {
-  const data = [10, 40, 50, 20, 10, 20, 50, 60, 50]
+  const data = [10, 40, 50, 20, 10, 20, 50, 60, 50];
   return (
 
     <Grid container spacing={2}  >

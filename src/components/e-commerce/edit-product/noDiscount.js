@@ -1,8 +1,13 @@
 import AutoCompleteCustom from "@/components/AutoCompleteCustom"
 import TextFieldCustom from "@/components/TextFieldCustom"
 import { Grid } from "@mui/material"
+import { useState } from "react"
 import { TabHeader } from "../TabHeader"
-export const NoDiscount = () => {
+export const NoDiscount = ({taxStatus}) => {
+const [selected,setSelected] = useState();
+  const handleChange = () => {
+      setSelected(!selected)
+  }
   return (
     <>
       <Grid container xs={12} >
@@ -35,11 +40,16 @@ export const NoDiscount = () => {
       <Grid container spacing={2} >
 
         <Grid item xs={6}>
-          <AutoCompleteCustom />
+          <AutoCompleteCustom 
+            options = {taxStatus}
+            onChange ={handleChange}
+          />
         </Grid>
 
         <Grid item xs={6} >
-          <TextFieldCustom />
+          <TextFieldCustom 
+            placeholder ={35}
+          />
         </Grid>
         <Grid xs={12} display={'flex'} >
           <Grid xs={6}>
@@ -52,13 +62,11 @@ export const NoDiscount = () => {
           <Grid xs={6}>
           <TabHeader
             level="body-xs"
-            text="Set the product tax class."
+            text="Set the product VAT about."
             sx={{ opacity: 0.6, ml:2}}
           />
           </Grid>
-
         </Grid>
-        
       </Grid>
       
 
