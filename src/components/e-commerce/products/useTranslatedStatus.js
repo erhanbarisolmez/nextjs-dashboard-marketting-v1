@@ -28,7 +28,7 @@ export const useProductStatus = () => {
 export const useProductTemplateStatus = () => {
   const t = useTranslations();
   const status = [
-    { label: t('default-template')},
+    { label: t('default-template') },
     { label: t('electronics') },
     { label: t('office-stationary') },
     { label: t('fashion') },
@@ -37,11 +37,22 @@ export const useProductTemplateStatus = () => {
 }
 
 export const useTaxStatus = () => {
-  const t= useTranslations();
+  const t = useTranslations();
   const status = [
-    { label: t('tax-free')},
+    { label: t('tax-free') },
     { label: t('taxable-goods') },
     { label: t('downloadable-product') },
+  ]
+  return status;
+}
+
+export const useVariationsStatus = () => {
+  const t = useTranslations();
+  const status = [
+    { label: t('color') },
+    { label: t('size')},
+    { label: t('material') },
+    { label: t('style') },
   ]
   return status;
 }

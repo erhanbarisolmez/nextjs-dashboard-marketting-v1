@@ -133,5 +133,9 @@
   "fashion": "Moda",
   "tax-free": "Vergisiz",
   "taxable-goods": "Vergiye tabi ürünler",
-  "downloadable-product": "İndirilebilir Ürün"
+  "downloadable-product": "İndirilebilir Ürün",
+  "style": "Stil",
+  "material": "Malzeme",
+  "size": "Boyut",
+  "color": "Renk"
 }

@@ -11,7 +11,7 @@ import { ProductTemplate } from './product-template'
 import { ReviewsTabContent } from './reviewsTabContent'
 import { Status } from './status'
 import Thumbnail from './thumbnail'
-const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus }) => {
+const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus, variationsStatus }) => {
 
   const tabsVariant = variants.tabsBasic.plain;
 
@@ -64,7 +64,7 @@ const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus })
             />}
           tabPanel2={
             <AdvancedTabContent 
-            
+            variationsStatus = {variationsStatus}
             />}
           tabPanel3={
             <ReviewsTabContent

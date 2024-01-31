@@ -1,7 +1,6 @@
 {
   "/[locale]/edit-product/page": "app/[locale]/edit-product/page.js",
-  "/[locale]/edit-product/[slug]/page": "app/[locale]/edit-product/[slug]/page.js",
-  "/[locale]/profile/page": "app/[locale]/profile/page.js",
-  "/[locale]/products/page": "app/[locale]/products/page.js",
-  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js"
+  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/edit-category/page": "app/[locale]/edit-category/page.js"
 }

@@ -133,5 +133,9 @@
   "fashion": "Fashion",
   "tax-free": "Tax Free",
   "taxable-goods": "Taxable Goods",
-  "downloadable-product": "Downloadable Product"
+  "downloadable-product": "Downloadable Product",
+  "color": "Color",
+  "size": "Size",
+  "material": "Material",
+  "style": "Style"
 }

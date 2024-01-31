@@ -3,11 +3,13 @@ import TextFieldCustom from "@/components/TextFieldCustom"
 import { Grid } from "@mui/material"
 import { useState } from "react"
 import { TabHeader } from "../TabHeader"
+
 export const NoDiscount = ({taxStatus}) => {
-const [selected,setSelected] = useState();
-  const handleChange = () => {
+ const [selected,setSelected] = useState();
+ const handleChange = () => {
       setSelected(!selected)
   }
+
   return (
     <>
       <Grid container xs={12} >

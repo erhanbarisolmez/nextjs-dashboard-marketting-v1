@@ -12,6 +12,7 @@ const EditProductPage = ({params}) => {
   const productStatus = useProductStatus();
   const productTemplateStatus = useProductTemplateStatus();
   const taxStatus = useTaxStatus();
+  const variationsStatus = useVariationsStatus();
    const t = useTranslations();
  
   return (
@@ -40,6 +41,7 @@ const EditProductPage = ({params}) => {
         statusOptions = {productStatus}
         productTemplateStatus = {productTemplateStatus}
         taxStatus={taxStatus}
+        variationsStatus = {variationsStatus}
       />
     </Container>
     </>
