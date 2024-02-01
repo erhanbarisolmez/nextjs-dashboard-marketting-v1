@@ -14,7 +14,7 @@ const CheckBoxJoy = ({
   const defaultColor = "neutral";
   const defaultSize = "md";
   const defaultCheckedFalse = false;
-  const defaultVariant = "solid"
+  const defaultVariant = "soft"
   return (
     <Checkbox
       label={label}

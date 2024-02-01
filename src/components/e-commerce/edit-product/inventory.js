@@ -2,6 +2,7 @@ import TextFieldCustom from '@/components/TextFieldCustom'
 import Card from '@/components/e-commerce/Card'
 import CheckBoxJoy from '@/components/e-commerce/CheckBoxJoy'
 import { TabHeader } from '@/components/e-commerce/TabHeader'
+import { palette } from '@/style/color'
 import { Container, Grid } from '@mui/material'
 import { TextFieldCard } from '../TextFieldCard'
 
@@ -56,6 +57,10 @@ export const Inventory = () => {
                 <CheckBoxJoy
                   defaultChecked={false}
                   label="Yes"
+                  sx={{
+                    color:palette.grey[500],
+                    opacity:0.7
+                  }}
                 />
               </Grid>
             </Grid>
