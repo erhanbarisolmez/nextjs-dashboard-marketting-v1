@@ -1,6 +1,8 @@
 import { Grid } from '@mui/material'
 import { Variations } from './Variations'
 import { Inventory } from './inventory'
+import { MetaOptions } from './meta-options'
+import { Shipping } from './shipping'
 export const AdvancedTabContent = ({ variationsStatus}) => {
   return (
     <>
@@ -11,6 +13,8 @@ export const AdvancedTabContent = ({ variationsStatus}) => {
         <Variations 
          variationsStatus ={variationsStatus}
         />
+        <Shipping />
+        <MetaOptions />
       </Grid>
     </>
   )

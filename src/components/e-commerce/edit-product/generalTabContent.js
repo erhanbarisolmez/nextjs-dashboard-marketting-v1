@@ -1,12 +1,11 @@
 'use client'
-import CustomButton from "@/components/CustomButton"
 import TextFieldCustom from "@/components/TextFieldCustom"
 import Card from "@/components/e-commerce/Card"
-import { palette } from '@/style/color'
 import { variants } from "@/utils/variants"
 import { Container, Grid } from "@mui/material"
 import { useEffect, useState } from "react"
 import InputFileUpload from "../InputFileUpload"
+import { TabButton } from "../TabButton"
 import { TabHeader } from "../TabHeader"
 import TabsBasic from "../TabsBasic"
 import ExampleTextareaComment from "../TextArea"
@@ -182,18 +181,7 @@ export const GeneralTabContent = ({taxStatus}) => {
         </Card>
        
          { /* BUTTON  */}
-        <Grid item xs={12} display={'flex'} justifyContent={'end'}>
-          <CustomButton
-            variant={buttonVariant}
-            buttonText="Cancel"
-            sx={{ bgcolor: palette.grey[100], color: palette.grey[900] }}
-          />
-          <CustomButton
-            buttonText="Save Change"
-
-            sx={{ ml: 2, bgcolor: palette.lightBlue[500] }}
-          />
-        </Grid>
+          <TabButton />
       </Grid>
     </>
   )

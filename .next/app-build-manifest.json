@@ -16,15 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/page.js"
     ],
+    "/[locale]/notification/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/notification/page.js"
+    ],
     "/[locale]/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/dashboard/page.js"
-    ],
-    "/[locale]/products/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/products/page.js"
     ]
   }
 }

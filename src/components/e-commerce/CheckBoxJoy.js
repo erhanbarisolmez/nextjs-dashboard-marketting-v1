@@ -1,5 +1,6 @@
 import Checkbox from '@mui/joy/Checkbox';
 import PropTypes from 'prop-types';
+import { TabHeader } from './TabHeader';
 
 const CheckBoxJoy = ({
   sx,
@@ -8,6 +9,7 @@ const CheckBoxJoy = ({
   variant,
   color,
   size,
+  text,
   ...otherProps
 }) => {
 
@@ -16,6 +18,7 @@ const CheckBoxJoy = ({
   const defaultCheckedFalse = false;
   const defaultVariant = "soft"
   return (
+    <>
     <Checkbox
       label={label}
       variant={variant || defaultVariant}
@@ -25,6 +28,14 @@ const CheckBoxJoy = ({
       sx={sx}
       {...otherProps}
     />
+    <br/>
+    <TabHeader 
+    level='body-sm'
+    titleTextField={text}
+    sxTitleTextField={{opacity:0.6, fontWeight:500}}
+
+    />
+    </>
   );
 }
 

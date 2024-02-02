@@ -4,9 +4,10 @@ import TextFieldCustom from '@/components/TextFieldCustom'
 import { palette } from '@/style/color'
 import CloseIcon from '@mui/icons-material/Close'
 import { Grid } from '@mui/material'
-
-export const VariationComponent = ({variation, variationsStatus, handleStatus, onClose }) => {
-
+import { useState } from 'react'
+export const VariationComponent = ({ variation, variationsStatus, handleStatus, onClose }) => {
+  const [isOpen, setOpen] = useState(false);
+  
   return (
     <Grid container item xs={12} sx={{ mt: 2, mb: 2 }}>
       <Grid item xs={11} sm={4}>
@@ -23,24 +24,26 @@ export const VariationComponent = ({variation, variationsStatus, handleStatus, o
         alignItems: 'center',
         mt: {
           xs: 1,
-          sm:0,
-          md:0
+          sm: 0,
+          md: 0
         },
         ml: {
-          sm:1
+          sm: 1
         }
       }}>
         <TextFieldCustom
-          placeholder="Variation" />
+          placeholder="Variation"        
+        />
+        
         <CloseIcon onClick={() => onClose(variation.id)}
-         sx={{
-          color:palette.red[400], 
-          backgroundColor:palette.red[50],
-          ml:1,
-          borderRadius:1,
-          p:1
-        }} 
-          />
+          sx={{
+            color: palette.red[400],
+            backgroundColor: palette.red[50],
+            ml: 1,
+            borderRadius: 1,
+            p: 1
+          }}
+        />
       </Grid>
     </Grid>
   )

@@ -8,8 +8,10 @@ export const TextFieldCard = ({
   textFieldPlaceHolder,
   textLevelBottom,
   textBottom,
-  sxBottom
+  sxBottom,
+  ...otherProps
 }) => {
+  
   const { defaultTextLevelHeader, defaultTextHeader, defaultTextColorHeader, defaultSxHeader, defaultTextFieldPlaceHolder, defaultTextLevelBottom, defaultTextBottom, defaultSxBottom } = Default();
   return (
     <>   
@@ -22,6 +24,7 @@ export const TextFieldCard = ({
 
   <TextFieldCustom
     placeholder={textFieldPlaceHolder || defaultTextFieldPlaceHolder} 
+    {...otherProps}
   />
   <TabHeader
     level= {textLevelBottom || defaultTextLevelBottom} 
