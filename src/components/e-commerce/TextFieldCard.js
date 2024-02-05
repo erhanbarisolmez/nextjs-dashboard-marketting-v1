@@ -9,6 +9,8 @@ export const TextFieldCard = ({
   textLevelBottom,
   textBottom,
   sxBottom,
+  textColorBg,
+  textBottom2,
   ...otherProps
 }) => {
   
@@ -30,6 +32,8 @@ export const TextFieldCard = ({
     level= {textLevelBottom || defaultTextLevelBottom} 
     titleTextField= {textBottom || defaultTextBottom}
     sxTitleTextField={sxBottom || defaultSxBottom} 
+    textColorBg={textColorBg}
+    titleTextField2={textBottom2}
   />
   </>
 

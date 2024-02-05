@@ -3,9 +3,9 @@ import Card from '@/components/e-commerce/Card'
 import { variants } from '@/utils/variants'
 import { Grid } from '@mui/material'
 import TabsBasic from '../TabsBasic'
-import { GeneralTabContent } from "./GeneralTabContent"
 import { AdvancedTabContent } from './advancedTabContent'
 import { AverageDailySales } from './average-daily-sales'
+import { GeneralTabContent } from "./generalTabContent"
 import { ProductDetails } from './product-details'
 import { ProductTemplate } from './product-template'
 import { ReviewsTabContent } from './reviewsTabContent'

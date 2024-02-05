@@ -41,9 +41,11 @@ export const MetaOptions = () => {
         textHeader="Meta Tag Keywords"
         textColorHeader=" "
         textFieldPlaceHolder= ' '
-        textBottom="Set a list of keywords that the product is related to. Separate the keywords by adding a comma , between each keyword."
+        textBottom="Set a list of keywords that the product is related to. Separate the keywords by adding a comma "
+        textColorBg=','
+        textBottom2=' between each keyword.'
        />
-
+    
         </Grid>
       </Container>
     </Card>

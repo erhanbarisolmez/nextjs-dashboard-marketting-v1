@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
-export default function BasicRating({value}) {
+export default function BasicRating({value,...otherProps}) {
 
   return (
     <Box
@@ -10,7 +10,7 @@ export default function BasicRating({value}) {
       }}
     >
 
-      <Rating name="read-only" defaultValue={2} value={value} readOnly />
+      <Rating name="read-only" defaultValue={2} value={value} readOnly  {...otherProps}/>
   
     </Box>
   );
