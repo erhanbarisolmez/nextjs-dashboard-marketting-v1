@@ -48,6 +48,7 @@ const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus, v
           />
         </Card>
       </Grid>
+
       {/* RIGHT CONTENT - TAB PANEL   */}
       <Grid item xs={12} sm={12} md={9} >
         <TabsBasic
@@ -70,7 +71,6 @@ const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus, v
             <ReviewsTabContent
              />}
         />
-
       </Grid>
 
     </Grid>
