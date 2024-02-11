@@ -137,5 +137,6 @@
   "style": "Stil",
   "material": "Malzeme",
   "size": "Boyut",
-  "color": "Renk"
+  "color": "Renk",
+  "reply": "Cevap vermek"
 }

@@ -30,7 +30,7 @@ const PageHeader = ({
   const [isCreateCardOpen, setIsCreateCardOpen] = useState(false);
   const handleClose = () => setIsCreateCardOpen(false);
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState();
   const contained = variants.button.contained;
 
   const onClickFilteredButton = () => {
