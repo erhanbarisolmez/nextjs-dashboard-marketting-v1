@@ -19,6 +19,8 @@ export const TypographyCustom = ({
         {text2}
       </Typography>
 
+    
+
     </Typography>
   )
 }

@@ -1,13 +1,17 @@
 'use client'
+import { InboxContentHeader } from "./inboxContent/InboxContentHeader";
+import { InboxHeader } from "./inboxContent/InboxHeader";
+import { UserCardInbox } from "./inboxContent/UserCardInbox";
 
-import { InboxHeader } from "./inboxContent/InboxHeader"
 
 export const InboxContent = () => {
   return (
     <>
-        <InboxHeader  
+        <InboxHeader />
+
+        <InboxContentHeader />
         
-        />
+        <UserCardInbox />
     </>
   )
 }

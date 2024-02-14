@@ -32,6 +32,7 @@ export const InboxHeader = () => {
             alignContent: 'center',
             alignItems: 'center',
             color: palette.grey[700],
+          
           }}
         >
           <Grid><ArrowIcon fontSize="medium" /></Grid>

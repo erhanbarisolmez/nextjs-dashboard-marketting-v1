@@ -15,10 +15,11 @@ export const TabHeader = ({
   titleTextField,
   headerTextFieldLevel,
   textColorBg,
-  titleTextField2
+  titleTextField2,
 }) => {
   const defaultLevel = "h4";
   const defaultFontWeight = "bold"
+
 
   return (
     <Typography
@@ -29,7 +30,13 @@ export const TabHeader = ({
 
       {text}
 
-      <Typography level={headerTextFieldLevel} fontWeight={headerTextFieldFontWeight} sx={sxHeaderTextField}>{headerTextField}</Typography>
+      <Typography 
+      level={headerTextFieldLevel} 
+      fontWeight={headerTextFieldFontWeight} 
+      sx={sxHeaderTextField}>
+        {headerTextField} 
+   
+      </Typography>
 
       <Typography fontWeight={titleTextFieldFontWeight} sx={sxTitleTextField}>
         {titleTextField}
@@ -52,6 +59,8 @@ export const TabHeader = ({
       </Typography>
 
       <Typography color="danger" fontWeight={fontWeight} >{colorText}</Typography>
+      
+      
 
     </Typography>
   )

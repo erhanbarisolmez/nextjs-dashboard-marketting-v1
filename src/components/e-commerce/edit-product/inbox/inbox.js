@@ -47,13 +47,13 @@ export const Inbox = () => {
   const menuItems = [
     { icon: <InboxIcon />, text: 'Inbox', content: <InboxContent />, },
     { icon: <StarIcon />, text: 'Marked', content: <MarkedContent />, },
-    { icon: <FileIcon />, text: 'Draft', content: <DraftContent />, },
-    { icon: <SendIcon />, text: 'Sent', content: <SentContent />, },
-    { icon: <DeleteIcon />, text: 'Trash', content: <TrashContent />, },
+    { icon: <FileIcon sx={{ mr: 2 }} />, text: 'Draft', content: <DraftContent />, },
+    { icon: <SendIcon sx={{ mr: 2 }} />, text: 'Sent', content: <SentContent />, },
+    { icon: <DeleteIcon sx={{ mr: 2 }} />, text: 'Trash', content: <TrashContent />, },
     menuSeperator,
-    { icon: <DonutLargeIcon sx={{ color: colorRed }} />, text: 'Custom Work', content: <CustomWorkContent />, },
-    { icon: <DonutLargeIcon sx={{ color: colorGreen }} />, text: 'Partnership', content: <PartnershipContent />, },
-    { icon: <DonutLargeIcon sx={{ color: colorPurple }} />, text: 'In Progress', content: <SentContent />, },
+    { icon: <DonutLargeIcon sx={{ color: colorRed, ml: 0.6 }} />, text: 'Custom Work', content: <CustomWorkContent />, },
+    { icon: <DonutLargeIcon sx={{ color: colorGreen, }} />, text: 'Partnership', content: <PartnershipContent />, },
+    { icon: <DonutLargeIcon sx={{ color: colorPurple, }} />, text: 'In Progress', content: <SentContent />, },
     { icon: <AddIcon />, text: 'Add Label', content: <AddLabelContent />, },
   ];
 
@@ -88,55 +88,54 @@ export const Inbox = () => {
 
     <>
       <Grid container mt={2} sx={{ display: 'flex', justifyContent: 'space-between' }} >
-
         {/* LEFT */}
-        {windowWidth > 1200 &&(
-        <Grid item xs={12} lg={2} >
-          <Card sx={{ height: '100%' }}>
-            <Grid item xs={12} mt={6} >
-              <Container>
-                <CustomButton
-                  variant={contained}
-                  buttonText="New Message"
-                  fullWidth
-                  sx={{
-                    bgcolor: palette.lightBlue[500],
-                    ':hover': {
-                      bgcolor: palette.lightBlue[700]
-                    }
-                  }} />
-              </Container>
-              <Grid item xs={12}>
-                {renderMenuItems()}
+        {windowWidth > 1200 && (
+          <Grid item xs={12} lg={2} >
+            <Card sx={{ height: '100%' }}>
+              <Grid item xs={12} mt={6} >
+                <Container>
+                  <CustomButton
+                    variant={contained}
+                    buttonText="New Message"
+                    fullWidth
+                    sx={{
+                      bgcolor: palette.lightBlue[500],
+                      ':hover': {
+                        bgcolor: palette.lightBlue[700]
+                      }
+                    }} />
+                </Container>
+                <Grid item xs={12}>
+                  {renderMenuItems()}
+                </Grid>
               </Grid>
-            </Grid>
-          </Card>
-        </Grid>
+            </Card>
+          </Grid>
         )}
 
         {/* RIGHT */}
         {windowWidth && (
-        <Grid item xs={12} lg={10} >
-          <Card sx={{
-            height: '100%',
-            ml: {
-              lg: 1
-            },
-            mt: {
-              xs :1,
-              lg : 0
-            }
-          }}>
-            <Grid item xs={12} mt={6} >
-              <Container>
-                <Grid xs={12}>
-                  {menuItems[menuIndex].content}
-                </Grid>
-              </Container>
-            </Grid>
+          <Grid item xs={12} lg={10} >
+            <Card sx={{
+              height: '100%',
+              ml: {
+                lg: 1
+              },
+              mt: {
+                xs: 1,
+                lg: 0
+              }
+            }}>
+              <Grid item xs={12} mt={6} >
+                <Container>
+                  <Grid xs={12}>
+                    {menuItems[menuIndex].content}
+                  </Grid>
+                </Container>
+              </Grid>
 
-          </Card>
-        </Grid>
+            </Card>
+          </Grid>
         )}
       </Grid>
     </>
