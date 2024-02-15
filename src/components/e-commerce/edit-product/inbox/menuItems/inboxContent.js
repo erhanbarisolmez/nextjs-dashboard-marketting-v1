@@ -12,6 +12,8 @@ export const InboxContent = () => {
         <InboxContentHeader />
         
         <UserCardInbox />
+        <UserCardInbox />
+        <UserCardInbox />
     </>
   )
 }
