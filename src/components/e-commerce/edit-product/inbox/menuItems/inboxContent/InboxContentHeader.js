@@ -1,4 +1,5 @@
 import { TabHeader } from "@/components/e-commerce/TabHeader";
+import { useStyles } from "@/style/Inbox/iconStyles";
 import { palette } from "@/style/color";
 import {
   PrintOutlined as PrintIcon,
@@ -9,28 +10,25 @@ import { Grid } from '@mui/material';
 
 export const InboxContentHeader = () => {
   const headerText = "Trip Reminder. Thank you for flying with us!"
-
+  const classes = useStyles();
   return (
     <>
-     <Grid item container
-        sx={{
-          display: 'flex',
-          alignItems:'center',
-          justifyContent:'space-evenly'
-        }}>
-        <TabHeader
+    <Grid container  sx={{
+      display:'flex',
+      flexDirection:'row',
+      justifyContent:'space-between',
+      alignItems:'center',
+      mt:3
+     
+    }}>
+      <Grid item xs ={4}>
+      <TabHeader
           level="title-lg"
           headerTextField={headerText}
-          sx={{
-            mt: 3,
-            justifyContent:'start'
-          }}
         />
-        <Grid item xs = {2}  sx={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          mt: 3
-        }}>
+      </Grid>
+
+          <Grid item xs={4} sx={{ display:'flex', flexDirection:'row',  justifyContent:'flex-start'}}>
           <Typography
             level="body-sm"
             sx={{
@@ -57,16 +55,14 @@ export const InboxContentHeader = () => {
           >
             important
           </Typography>
+          </Grid>
 
-        </Grid>
-        <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3}}>
-
-          <Grid item xs={2}><SwapIcon sx={{ color: "GrayText" }} /></Grid>
-          <Grid item xs={2}><PrintIcon sx={{ color: "GrayText", ml:1 }} /></Grid>
-
-        </Grid>
-
-      </Grid>
+    
+          <Grid item  xs={4}  sx={{display:'flex', justifyContent:'flex-end'}}>
+          <SwapIcon className={classes.icon} />
+          <PrintIcon className={classes.icon} />
+          </Grid>
+          </Grid>
     </>
   )
 }

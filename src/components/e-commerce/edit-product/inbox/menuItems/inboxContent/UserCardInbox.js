@@ -1,6 +1,5 @@
 'use client'
-import { TypographyCustom } from '@/components/TypographyCustom';
-import { TabHeader } from '@/components/e-commerce/TabHeader';
+import { useStyles } from "@/style/Inbox/iconStyles";
 import { palette } from '@/style/color';
 import {
   CommentBankOutlined as CommentIcon,
@@ -9,137 +8,68 @@ import {
   MoreHorizOutlined as MoreIcon,
   StarBorderOutlined as StarIcon
 } from '@mui/icons-material';
-import { Avatar } from '@mui/joy';
-import Divider from '@mui/joy/Divider';
-import { Grid, Typography } from '@mui/material';
 import { useState } from "react";
+import { CardClose } from './userCard/CardClose';
+import { CardOpen } from './userCard/CardOpen';
 
-
-export const UserCardInbox = () => {
+export const UserCardInbox = ({ control }) => {
   const [open, setOpen] = useState(true);
+  const classes = useStyles();
 
-  const handleClick = () => {
-    setOpen(prevOpen => !prevOpen)
-    console.log("durum:", open);
+  const Icon = {
+    "star": <StarIcon className={classes.icon} />,
+    "donut": <DonutIcon className={classes.icon} />,
+    "comment": <CommentIcon className={classes.icon} />,
+    "edit": <EditIcon className={classes.icon} />,
+    "more": <MoreIcon className={classes.icon} />
   }
+
   const message = `Hi Bob, 
   With resrpect, i must disagree with Mr.Zinsser. We all know the most part of important part of any article is the title.Without a compelleing title, your reader won't even get to the first sentence.After the title, however, the first few sentences of your article are certainly the most important part.
   Jornalists call this critical, introductory section the "Lede," and when bridge properly executed, it's the that carries your reader from an headine try at attention-grabbing to the body of your blog post, if you want to get it right on of these 10 clever ways to omen your next blog posr with a bang
   Best regards,
   Jason Muller`;
 
+  const handleClick = () => {
+    setOpen(prevOpen => !prevOpen)
+    console.log("durum:", open);
+  }
 
   return (
-    <div >
-      {open ? (
-        <Grid item container sx={{ display: 'flex', mt: 3 }}>
-          <Grid item xs={6} onClick={handleClick} style={{ cursor: 'pointer' }} sx={{ display: 'flex', alignItems: 'center' }}>
-            <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center' }}>
-              <Grid>
-                <Avatar variant='outlined' size='lg' sx={{}} />
-              </Grid>
-              <Grid item sx={{ fontWeight: 600 }} >
-                Emma Smith
-              </Grid>
-              <Grid item
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontWeight: 600,
-                  color: 'grey'
-                }} >
-                <DonutIcon sx={{ mr: 1, color: palette.lightGreen[400] }} />
-                1 day ago
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={6} sx={{}}>
-
-            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'end' }}>
-              <TabHeader
-                titleTextField="24 Jun 2024, 10:30 am"
-                level="body-sm"
-                fontWeight={400}
-                sxTitleTextField={{ color: 'gray', textAlign: 'center', alignItems: 'center' }}
-              />
-
-              <Grid item xs={4} sx={{ display: 'flex', ml: 3, color: 'gray', justifyContent: 'space-between', display: 'flex' }}>
-                <StarIcon />
-                <CommentIcon />
-                <EditIcon />
-                <MoreIcon />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Typography sx={{ mt: 3 }}>
-            {message}
-          </Typography>
-          <Grid item xs={12}>
-            <Divider orientation='horizontal' sx={{ mt: 3 }} />
-          </Grid>
-
-        </Grid>
+  <div>
+      {open === control ? (
+      
+      <CardOpen  
+      name="Emma Smith"
+      time="1 day ago"
+      timeIcon={<DonutIcon sx={{ mr: 1, color: palette.lightGreen[400] }} />}
+      date="24 Jun 2024, 10:30 am"
+      handleClick={handleClick}
+      icon1={Icon.star}
+      icon2={Icon.comment}
+      icon3={Icon.edit}
+      icon4={Icon.more}
+      message={message}
+      />
 
       ) :
-        <Grid item container sx={{ display: 'flex', mt: 3 }}>
-          <Grid item xs={12} onClick={handleClick} style={{ cursor: 'pointer' }} sx={{ display: 'flex', alignItems: 'center', mt: 3 }}>
-            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center' }}>
-              <Grid item xs={1}>
-                <Avatar variant='outlined' size='lg' sx={{}} />
-              </Grid>
-              <Grid xs={4} item sx={{ fontWeight: 600, justifyContent: 'flex-start', display: 'flex', ml: 3 }} >
-                Emma Smith
-              </Grid>
-              <Grid item
-                xs={12}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontWeight: 600,
-                  color: 'grey'
-                }} >
-                <DonutIcon sx={{ mr: 1, color: palette.lightGreen[400] }} />
-                1 day ago
-              </Grid>
-            </Grid>
+        <CardClose 
+        name="Emma Smith"
+        time="1 day ago"
+        timeIcon={<DonutIcon sx={{ mr: 1, color: palette.lightGreen[400] }} />}
+        date="24 Jun 2024, 10:30 am"
+        handleClick={handleClick}
+        icon1={Icon.star}
+        icon2={Icon.comment}
+        icon3={Icon.edit}
+        icon4={Icon.more}
+        message={message}
+        />
 
-            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'end' }}>
-              <TabHeader
-                titleTextField="24 Jun 2024, 10:30 am"
-                level="body-sm"
-                fontWeight={400}
-                sxTitleTextField={{ color: 'gray', textAlign: 'center', alignItems: 'center' }}
-              />
+        
+}
+  </div>
 
-              <Grid item xs={4} sx={{ display: 'flex', ml: 3, color: 'gray', justifyContent: 'space-between', display: 'flex' }}>
-                <StarIcon />
-                <CommentIcon />
-                <EditIcon />
-                <MoreIcon />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <TypographyCustom
-              sx={{
-                mt: 3,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                WebkitLineClamp: 1,
-                WebkitBoxOrient: 'vertical'
-              }}
-              text={message}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Divider orientation='horizontal' sx={{mt:3}} />
-
-          </Grid>
-        </Grid>
-      }
-
-    </div>
 
   )
 }

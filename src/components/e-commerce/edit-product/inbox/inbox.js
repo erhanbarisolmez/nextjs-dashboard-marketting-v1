@@ -36,7 +36,7 @@ export const Inbox = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(windowWidth)
     };
 
     window.addEventListener('resize', handleResize);

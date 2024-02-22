@@ -8,12 +8,10 @@ export const InboxContent = () => {
   return (
     <>
         <InboxHeader />
-
         <InboxContentHeader />
-        
-        <UserCardInbox />
-        <UserCardInbox />
-        <UserCardInbox />
+        <UserCardInbox control={true}/>
+        <UserCardInbox control={false} />
+        <UserCardInbox  control={false}/>
     </>
   )
 }
