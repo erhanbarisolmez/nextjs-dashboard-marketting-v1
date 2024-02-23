@@ -65,7 +65,6 @@ export const UserCardInbox = ({ control }) => {
         icon4={Icon.more}
         message={message}
         />
-
         
 }
   </div>

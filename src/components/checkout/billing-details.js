@@ -14,7 +14,7 @@ const BillingDetails = (props) => {
    } = props;
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [country, setCountry] = React.useState(null);
+  const [country, setCountry] = React.useState();
   const [postalCode, setPostalCode] = React.useState("");
   return (
     <Grid container item spacing={2} xs={12} mt={2}>
@@ -42,7 +42,7 @@ const BillingDetails = (props) => {
           sx={{ width: '100%' }}
           label={billingCountriesLabel}
           value={country}
-          onChange={(event, newValue) => setCountry(newValue)}
+          onChange={(_, newValue) => setCountry(newValue)}
         />
       </Grid>
       <Grid item xs={6}>

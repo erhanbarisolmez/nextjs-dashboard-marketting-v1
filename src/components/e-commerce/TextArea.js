@@ -1,4 +1,5 @@
 'use client'
+import BackupOutlinedIcon from '@mui/icons-material/BackupOutlined';
 import Check from '@mui/icons-material/Check';
 import FormatBold from '@mui/icons-material/FormatBold';
 import FormatItalic from '@mui/icons-material/FormatItalic';
@@ -10,16 +11,44 @@ import IconButton from '@mui/joy/IconButton';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Menu from '@mui/joy/Menu';
 import MenuItem from '@mui/joy/MenuItem';
+import Select from '@mui/joy/Select';
 import Textarea from '@mui/joy/Textarea';
 import * as React from 'react';
 
-export default function ExampleTextareaComment() {
+export default function ExampleTextareaComment({ showFileIcon = false }) {
+
   const [italic, setItalic] = React.useState(false);
   const [fontWeight, setFontWeight] = React.useState('normal');
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const fileInputRef = React.useRef(null);
+  const [fontSize, setFontSize] = React.useState('medium')
+
+  const handleOpen = () => {
+    fileInputRef.current.click();
+  }
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log('yüklenen dosya: ', file)
+    }
+  }
+
+  //  Select yapıldığında text fontsize ayarlancak...
+  const handleFontSizeChange = (event) => {
+    // setFontSize(event.target.value)
+  }
+
   return (
     <FormControl>
       {/* <FormLabel>Your comment</FormLabel> */}
+
+      <input
+        ref={fileInputRef}
+        type='file'
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
       <Textarea
         placeholder="Type something here…"
         minRows={3}
@@ -75,6 +104,27 @@ export default function ExampleTextareaComment() {
             >
               <FormatItalic />
             </IconButton>
+            {/* ... */}
+            {showFileIcon && (
+              <IconButton
+                variant="plain"
+                color="neutral"
+                onClick={handleOpen}
+              >
+                <BackupOutlinedIcon />
+              </IconButton>
+            )}
+            <FormControl>
+              <Select
+                value={fontSize}
+                onChange={handleFontSizeChange}
+                variant='filled'
+              >
+                <MenuItem value="small">small</MenuItem>
+                <MenuItem value="medium">medium</MenuItem>
+                <MenuItem value="large">large</MenuItem>
+              </Select>
+            </FormControl>
             <Button sx={{ ml: 'auto' }}>Send</Button>
           </Box>
         }

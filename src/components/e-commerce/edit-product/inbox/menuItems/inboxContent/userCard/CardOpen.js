@@ -21,7 +21,7 @@ export const CardOpen = ({
           <Grid item xs={6} onClick={handleClick} style={{ cursor: 'pointer' }} sx={{ display: 'flex', alignItems: 'center' }}>
             <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center' }}>
               <Grid>
-                <Avatar variant='outlined' size='lg' sx={{}} />
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" variant='outlined' size='lg' sx={{}} />
               </Grid>
               <Grid item sx={{ fontWeight: 600 }} >
                 {name}
@@ -65,7 +65,7 @@ export const CardOpen = ({
               </Grid>
             </Grid>
           </Grid>
-          <Typography sx={{ mt: 3 }}>
+          <Typography sx={{ mt: 3, color:"grey" }}>
             {message}
           </Typography>
           <Grid item xs={12}>

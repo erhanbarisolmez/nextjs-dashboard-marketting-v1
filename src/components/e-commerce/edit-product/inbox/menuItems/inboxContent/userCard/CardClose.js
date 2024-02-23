@@ -21,13 +21,13 @@ export const CardClose = ({
     <Grid item container sx={{ display: 'flex', mt: 3 }}>
           <Grid item xs={6} onClick={handleClick} style={{ cursor: 'pointer' }} sx={{ display: 'flex', alignItems: 'center' }}>
             <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'center' }}>
-              <Grid>
+              <Grid item xs={2}>
                 <Avatar variant='outlined' size='lg' sx={{}} />
               </Grid>
-              <Grid item sx={{ fontWeight: 600 }} >
+              <Grid item xs={6} sx={{ fontWeight: 600 }} >
                 {name}
               </Grid>
-              <Grid item
+              <Grid item xs={6}
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
@@ -39,6 +39,8 @@ export const CardClose = ({
               </Grid>
             </Grid>
           </Grid>
+
+
           <Grid item xs={6} sx={{}}>
 
             <Grid item xs={12} sx={{
@@ -66,7 +68,7 @@ export const CardClose = ({
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={8}>
             <TypographyCustom
               sx={{
                 mt: 3,
@@ -74,7 +76,8 @@ export const CardClose = ({
                 textOverflow: 'ellipsis',
                 display: '-webkit-box',
                 WebkitLineClamp: 1,
-                WebkitBoxOrient: 'vertical'
+                WebkitBoxOrient: 'vertical',
+                color:"grey"
               }}
               text={message}
             />

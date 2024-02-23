@@ -36,7 +36,7 @@ export const Inbox = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(windowWidth)
+      setWindowWidth(window.innerWidth)
     };
 
     window.addEventListener('resize', handleResize);
@@ -79,7 +79,7 @@ export const Inbox = () => {
               color: palette.lightBlue[300]
             },
             pointerEvents: item === menuSeperator ? 'none' : 'auto', // Disable pointer events for the separator
-
+            cursor:"pointer",
           }}
         />
       )))
@@ -91,7 +91,7 @@ export const Inbox = () => {
         {/* LEFT */}
         {windowWidth > 1200 && (
           <Grid item xs={12} lg={2} >
-            <Card sx={{ height: '100%' }}>
+            <Card sx={{}}>
               <Grid item xs={12} mt={6} >
                 <Container>
                   <CustomButton
@@ -128,7 +128,7 @@ export const Inbox = () => {
             }}>
               <Grid item xs={12} mt={6} >
                 <Container>
-                  <Grid xs={12}>
+                  <Grid item xs={12}>
                     {menuItems[menuIndex].content}
                   </Grid>
                 </Container>
