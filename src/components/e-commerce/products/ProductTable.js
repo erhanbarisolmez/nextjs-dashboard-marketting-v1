@@ -1,12 +1,14 @@
+'use client'
+import TableHeader from '@/components/e-commerce/products/TableHeader';
 import { Grid, Paper } from '@mui/material';
 import ProductTableContent from './ProductTableContent';
-import TableHeader from './TableHeader';
-const ProductTable = async(props) => {
-  const {
-    productOptions,
-    autoCompleteLabel
-    
-  } = props;
+const ProductTable = ({
+  productOptions,
+  autoCompleteLabel,
+  tableHeaderButtonText,
+  searchInputText
+}) => {
+
   
   const status = {
     published : "Published",
@@ -23,6 +25,8 @@ const ProductTable = async(props) => {
             <TableHeader 
             productOptions = {productOptions}
             autoCompleteLabel = {autoCompleteLabel}
+            tableHeaderButtonText={tableHeaderButtonText}
+            searchInputText={searchInputText}
             />
             {/* PRODUCT TABLE CONTENT */}
             <ProductTableContent 

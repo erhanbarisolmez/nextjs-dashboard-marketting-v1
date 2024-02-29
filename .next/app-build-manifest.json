@@ -1,35 +1,25 @@
 {
   "pages": {
-    "/[locale]/edit-product/[...inbox]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/edit-product/[...inbox]/page.js"
-    ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/[locale]/layout.css",
       "static/chunks/app/[locale]/layout.js"
     ],
-    "/[locale]/dashboard/page": [
+    "/[locale]/categories/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/dashboard/page.js"
+      "static/chunks/app/[locale]/categories/page.js"
     ],
-    "/[locale]/edit-product/page": [
+    "/[locale]/products/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/edit-product/page.js"
+      "static/chunks/app/[locale]/products/page.js"
     ],
-    "/[locale]/profile/page": [
+    "/[locale]/edit-product/[...inbox]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/profile/page.js"
-    ],
-    "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/[locale]/edit-product/[...inbox]/page.js"
     ]
   }
 }

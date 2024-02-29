@@ -1,11 +1,13 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
-import useTranslatedStatus from "@/components/e-commerce/products/useTranslatedStatus";
+import CategoriesTable  from "@/components/e-commerce/categories/categoriesTable";
+import useTranslatedStatus,{useProductStatus} from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 
 const CategoriesPage = () => {
   const status = useTranslatedStatus();
+  const productStatus = useProductStatus();
   const t = useTranslations();
   return (
     <>
@@ -27,6 +29,12 @@ const CategoriesPage = () => {
       filterCardTextButton2= {t('apply')}
     />
     <CustomBreadcrumbs breadcrumbsText1 = {t('home')} breadcrumbsText2 = {t('e-commerce')} breadcrumbsText3 = {t('categories')}/>
+    <CategoriesTable 
+        productOptions = {productStatus}
+        autoCompleteLabel = "Status"
+        tableHeaderButtonText="Add Category"
+        searchInputText = "Search Category"
+    />
     </Container>
     </>
   )

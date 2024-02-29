@@ -1,7 +1,4 @@
 {
-  "/not-found": "app/not-found.js",
-  "/[locale]/edit-product/[...inbox]/page": "app/[locale]/edit-product/[...inbox]/page.js",
-  "/[locale]/edit-product/page": "app/[locale]/edit-product/page.js",
-  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js",
-  "/[locale]/profile/page": "app/[locale]/profile/page.js"
+  "/[locale]/products/page": "app/[locale]/products/page.js",
+  "/[locale]/categories/page": "app/[locale]/categories/page.js"
 }

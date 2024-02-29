@@ -4,11 +4,14 @@ import ProductTable from "@/components/e-commerce/products/ProductTable";
 import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
+
+
 const ProductPage = () => {
+
   const status = useTranslatedStatus();
   const productStatus = useProductStatus();
-  
   const t = useTranslations();
+
   return (
     <>
     <Container maxWidth="xl">
@@ -32,6 +35,8 @@ const ProductPage = () => {
     <ProductTable 
       productOptions = {productStatus}
       autoCompleteLabel = "Status"
+      tableHeaderButtonText="Add Product"
+      searchInputText="Search Product"
     />
     
     </Container>

@@ -16,11 +16,7 @@ const users = [
   { name: "Dan Wilson", image: <Avatar /> },
   { name: "Francis Mitcham", image: <Avatar /> }
 ];
-const fontStyle = [
-  { fontSize: "h1" },
-  { fontSize: "h2" },
-  { fontSize: "h3" }
-];
+
 
 export const Send = () => {
   const classes = useStyles();
@@ -73,7 +69,8 @@ export const Send = () => {
 
         <ExampleTextareaComment
           showFileIcon={true}
-        />
+
+          />
       </Card>
     </>
   )

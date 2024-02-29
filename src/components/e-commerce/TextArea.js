@@ -1,8 +1,9 @@
-'use client'
 import BackupOutlinedIcon from '@mui/icons-material/BackupOutlined';
 import Check from '@mui/icons-material/Check';
+import CodeIcon from '@mui/icons-material/Code';
 import FormatBold from '@mui/icons-material/FormatBold';
 import FormatItalic from '@mui/icons-material/FormatItalic';
+import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
@@ -11,7 +12,6 @@ import IconButton from '@mui/joy/IconButton';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Menu from '@mui/joy/Menu';
 import MenuItem from '@mui/joy/MenuItem';
-import Select from '@mui/joy/Select';
 import Textarea from '@mui/joy/Textarea';
 import * as React from 'react';
 
@@ -20,8 +20,14 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
   const [italic, setItalic] = React.useState(false);
   const [fontWeight, setFontWeight] = React.useState('normal');
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [fontSize, setFontSize] = React.useState('medium');
+  const [anchorElSize, setAnchorElSize] = React.useState(null);
+
+  const [code, setCode] = React.useState(false);
+
   const fileInputRef = React.useRef(null);
-  const [fontSize, setFontSize] = React.useState('medium')
+  const [text, setText] = React.useState('');
 
   const handleOpen = () => {
     fileInputRef.current.click();
@@ -34,24 +40,19 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
     }
   }
 
-  //  Select yapıldığında text fontsize ayarlancak...
-  const handleFontSizeChange = (event) => {
-    // setFontSize(event.target.value)
-  }
-
   return (
     <FormControl>
-      {/* <FormLabel>Your comment</FormLabel> */}
-
       <input
         ref={fileInputRef}
         type='file'
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
+
       <Textarea
         placeholder="Type something here…"
         minRows={3}
+        onChange={(e) => setText(e.target.value)}
         endDecorator={
           <Box
             sx={{
@@ -96,6 +97,7 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
                 </MenuItem>
               ))}
             </Menu>
+
             <IconButton
               variant={italic ? 'soft' : 'plain'}
               color={italic ? 'primary' : 'neutral'}
@@ -104,7 +106,7 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
             >
               <FormatItalic />
             </IconButton>
-            {/* ... */}
+
             {showFileIcon && (
               <IconButton
                 variant="plain"
@@ -114,24 +116,59 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
                 <BackupOutlinedIcon />
               </IconButton>
             )}
-            <FormControl>
-              <Select
-                value={fontSize}
-                onChange={handleFontSizeChange}
-                variant='filled'
-              >
-                <MenuItem value="small">small</MenuItem>
-                <MenuItem value="medium">medium</MenuItem>
-                <MenuItem value="large">large</MenuItem>
-              </Select>
-            </FormControl>
+
+            <IconButton
+              variant="plain"
+              color="neutral"
+              onClick={(event) => setAnchorElSize(event.currentTarget)}
+            >
+              <FormatSizeIcon />
+              <KeyboardArrowDown fontSize="md" />
+            </IconButton>
+            <Menu
+              anchorEl={anchorElSize}
+              open={Boolean(anchorElSize)}
+              onClose={() => setAnchorElSize(null)}
+              size='sm'
+              placement='bottom-start'
+              sx={{ '--ListItemDecorator-size': '24px' }}
+            >
+              {['small', 'medium', 'large'].map((size) => (
+                <MenuItem
+                  key={size}
+                  selected={fontSize === size}
+                  onClick={() => {
+                    setFontSize(size);
+                    setAnchorElSize(null)
+                  }}
+                  sx={{ fontSize: size }}
+                >
+                  <ListItemDecorator>
+                    {fontSize === size && <Check fontSize='sm' />}
+                  </ListItemDecorator>
+                  {size === 'medium' ? "medium" : size}
+                </MenuItem>
+              ))}
+            </Menu>
+
+            <IconButton
+              variant={code ? 'plain' : 'soft'}
+              color='neutral'
+              onClick={() => setCode((bool) => !bool)}
+            >
+              <CodeIcon />
+            </IconButton>
+
             <Button sx={{ ml: 'auto' }}>Send</Button>
           </Box>
         }
+
         sx={{
           minWidth: 300,
           fontWeight,
           fontStyle: italic ? 'italic' : 'initial',
+          fontSize,
+
         }}
       />
     </FormControl>
