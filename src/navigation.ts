@@ -37,6 +37,7 @@ export const pathnames = {
     en:'/edit-product',
     tr:'/urun-duzenle'
   },
+   
   '/add-category':{
     en:'/add-category',
     tr:'/kategori-ekle'

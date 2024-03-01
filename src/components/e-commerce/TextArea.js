@@ -27,7 +27,6 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
   const [code, setCode] = React.useState(false);
 
   const fileInputRef = React.useRef(null);
-  const [text, setText] = React.useState('');
 
   const handleOpen = () => {
     fileInputRef.current.click();
@@ -52,7 +51,6 @@ export default function ExampleTextareaComment({ showFileIcon = false }) {
       <Textarea
         placeholder="Type something here…"
         minRows={3}
-        onChange={(e) => setText(e.target.value)}
         endDecorator={
           <Box
             sx={{

@@ -11,7 +11,7 @@ const SearchInput = ({
     <FormControl variant="outlined" >
       <Input
         id="input-with-icon-adornment"
-        placeholder={searchInputText} // Search (Ctrl+/)
+        placeholder={searchInputText}
         startAdornment={
           <InputAdornment position="start">
             <Search />

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import CheckBoxJoy from '../CheckBoxJoy';
 import { TabHeader } from '../TabHeader';
+
 function createData(id, rating, customer, comment, date, approved) {
   return { id, rating, customer, comment, date, approved };
 }
@@ -100,7 +101,7 @@ export const ReviewsTabContent = () => {
                       </td>
                       <td><BasicRating value={row.rating} /></td>
                       <td>
-
+                      
                         <Link href={`edit-product/inbox/${row.customer}`}>
                         {row.customer}
                       </Link>

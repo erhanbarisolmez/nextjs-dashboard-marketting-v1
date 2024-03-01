@@ -9,14 +9,16 @@ const Navbar = () => {
       <Box sx={{
         display: 'flex', flexDirection: 'row', justifyContent: 'space-between', mt: 5, mb: 5
       }}>
-        <SearchInput />
+        <SearchInput
+          searchInputText="Search (Ctrl+/)"
+        />
         <Box sx={{
           display: 'flex',
           alignItems: 'center',
-          gap: 2,       
-          color:'gray'
+          gap: 2,
+          color: 'gray'
         }}>
-         <NavLinks/>
+          <NavLinks />
         </Box>
       </Box>
 

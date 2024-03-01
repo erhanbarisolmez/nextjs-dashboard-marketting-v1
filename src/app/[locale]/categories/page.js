@@ -1,7 +1,7 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import CategoriesTable  from "@/components/e-commerce/categories/categoriesTable";
-import useTranslatedStatus,{useProductStatus} from "@/components/e-commerce/products/useTranslatedStatus";
+import useTranslatedStatus,{useProductStatus} from  "@/utils/translate/useTranslatedStatus"
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 
@@ -34,6 +34,7 @@ const CategoriesPage = () => {
         autoCompleteLabel = "Status"
         tableHeaderButtonText="Add Category"
         searchInputText = "Search Category"
+  
     />
     </Container>
     </>

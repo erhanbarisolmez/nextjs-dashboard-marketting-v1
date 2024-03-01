@@ -1,16 +1,15 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import ProductTable from "@/components/e-commerce/products/ProductTable";
-import useTranslatedStatus, { useProductStatus } from "@/components/e-commerce/products/useTranslatedStatus";
+import useTranslatedStatus, { useProductStatus } from "@/utils/translate/useTranslatedStatus";
+import { useActionProductTable, useProductColumnName, useProductStatusTable } from "@/utils/translate/useTranslatedTable";
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 
 
 const ProductPage = () => {
 
-  const status = useTranslatedStatus();
-  const productStatus = useProductStatus();
-  const t = useTranslations();
+  const { t, status, productStatus, productTableStatus, actionProductTable, productColumnName } = useTranslate();
 
   return (
     <>
@@ -34,9 +33,13 @@ const ProductPage = () => {
     <CustomBreadcrumbs breadcrumbsText1 = {t('home')} breadcrumbsText2 = {t('e-commerce')} breadcrumbsText3 = {t('products')} />
     <ProductTable 
       productOptions = {productStatus}
-      autoCompleteLabel = "Status"
-      tableHeaderButtonText="Add Product"
-      searchInputText="Search Product"
+      autoCompleteLabel = {t('status')}
+      tableHeaderButtonText={t('add-product')}
+      productTableStatus = {productTableStatus}
+      actionProductTable = {actionProductTable}
+      searchInputText={t('search-product')}
+      productColumnName = {productColumnName}
+      actionLabel={t('actions')}
     />
     
     </Container>
@@ -45,3 +48,13 @@ const ProductPage = () => {
 }
 
 export default ProductPage
+
+function useTranslate() {
+  const status = useTranslatedStatus();
+  const productStatus = useProductStatus();
+  const productTableStatus = useProductStatusTable();
+  const actionProductTable = useActionProductTable();
+  const productColumnName = useProductColumnName();
+  const t = useTranslations();
+  return { t, status, productStatus, productTableStatus, actionProductTable, productColumnName };
+}

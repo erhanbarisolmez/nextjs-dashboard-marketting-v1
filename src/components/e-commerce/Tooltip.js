@@ -2,7 +2,7 @@ import { palette } from "@/style/color";
 import ErrorOutlinedIcon from '@mui/icons-material/ErrorOutlined';
 import IconButton from '@mui/joy/IconButton';
 import Tooltip from '@mui/joy/Tooltip';
-export const TooltipCustom = ({title, }) => {
+export const TooltipCustom = ({title }) => {
   return (
     <Tooltip
     arrow

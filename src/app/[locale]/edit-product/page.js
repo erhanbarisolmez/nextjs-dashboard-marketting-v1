@@ -1,7 +1,7 @@
 import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import EditContent from '@/components/e-commerce/edit-product/edit-content';
-import useTranslatedStatus, { useProductStatus, useProductTemplateStatus, useTaxStatus, useVariationsStatus } from "@/components/e-commerce/products/useTranslatedStatus";
+import useTranslatedStatus, { useProductStatus, useProductTemplateStatus, useTaxStatus, useVariationsStatus } from "@/utils/translate/useTranslatedStatus"
 import { Container } from "@mui/material";
 import { useTranslations } from "next-intl";
 const EditProductPage = ({params}) => {

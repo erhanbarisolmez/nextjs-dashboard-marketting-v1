@@ -1,4 +1,7 @@
 {
+  "/[locale]/edit-product/[...inbox]/page": "app/[locale]/edit-product/[...inbox]/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/dashboard/page": "app/[locale]/dashboard/page.js",
   "/[locale]/products/page": "app/[locale]/products/page.js",
   "/[locale]/categories/page": "app/[locale]/categories/page.js"
 }

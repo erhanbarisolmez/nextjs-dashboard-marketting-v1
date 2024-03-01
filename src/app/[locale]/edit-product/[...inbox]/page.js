@@ -1,7 +1,7 @@
 import CustomBreadcrumbs from '@/components/CustomBreadcrumbs'
 import PageHeader from '@/components/PageHeader'
 import { Inbox } from '@/components/e-commerce/edit-product/inbox/inbox'
-import useTranslatedStatus from '@/components/e-commerce/products/useTranslatedStatus'
+import useTranslatedStatus from '@/utils/translate/useTranslatedStatus'
 import { Container } from '@mui/material'
 import { useTranslations } from 'next-intl'
 const Customer = () => {

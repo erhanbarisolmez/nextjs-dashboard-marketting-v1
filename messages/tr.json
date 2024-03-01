@@ -125,7 +125,7 @@
   "edit-product": "Ürünü Düzenle",
   "all": "Tüm",
   "published": "Yayınlanan",
-  "scheduled": "planlanmış",
+  "scheduled": "Planlanmış",
   "draft": "Taslak",
   "default-template": "Varsayılan şablon",
   "electronics": "Elektronik",
@@ -138,5 +138,13 @@
   "material": "Malzeme",
   "size": "Boyut",
   "color": "Renk",
-  "reply": "Cevap vermek"
+  "reply": "Cevap vermek",
+  "search-product": "Ürün Ara",
+  "edit": "düzenle",
+  "delete": "sil",
+  "sku": "sku",
+  "qty": "miktar",
+  "actions": "hareketler",
+  "status-1": "durum",
+  "price": "fiyat"
 }

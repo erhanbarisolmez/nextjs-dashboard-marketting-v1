@@ -2,6 +2,8 @@ import { palette } from "@/style/color";
 import { variants } from "@/utils/variants";
 import { Grid } from '@mui/material';
 import CustomButton from "../CustomButton";
+
+
 export const TabButton = () => {
   const buttonVariant = variants.button.text;
 

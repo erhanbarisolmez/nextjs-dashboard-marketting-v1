@@ -24,6 +24,7 @@ const CategoriesTable = ({
             autoCompleteLabel={autoCompleteLabel}
             tableHeaderButtonText={tableHeaderButtonText}
             searchInputText = {searchInputText}
+            autoCompleteButtonShowTrue = {false}
           />
         </Paper>
       </Grid>

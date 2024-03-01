@@ -9,7 +9,8 @@ const TableHeader = ({
   autoCompleteLabel,
   productOptions,
   tableHeaderButtonText,
-  searchInputText
+  searchInputText,
+  autoCompleteButtonShowTrue = true
 }) => {
 
   const [status, setStatus] = useState();
@@ -37,6 +38,7 @@ const TableHeader = ({
                 lg: 170
               }
             }}>
+              {autoCompleteButtonShowTrue &&(
               <AutoCompleteCustom
                 options={filterProductOptions}
                 value={status}
@@ -48,6 +50,7 @@ const TableHeader = ({
                   width: 175
                 }}
               />
+              )}
             </Box>
             <Box sx={{
               ml: 1,

@@ -38,7 +38,7 @@
   "82-activity-growth": "%82 Activity Growth",
   "image": "IMAGE",
   "product-name": "PRODUCT NAME",
-  "status": "STATUS",
+  "status": "Status",
   "revenue": "REVENUE",
   "conversion": "CONVERSION",
   "total-impression": "Total Impression",
@@ -104,7 +104,7 @@
   "approved": "Approved",
   "in-process": "In Process",
   "rejected": "Rejected",
-  "products": "Products",
+  "products": "Product",
   "home": "Home",
   "e-commerce": "e-Commerce",
   "filter": "FILTER",
@@ -140,5 +140,13 @@
   "style": "Style",
   "reply": "Reply",
   "create-0": "Create",
-  "filter-0": "Filter"
+  "filter-0": "Filter",
+  "search-product": "Search Product",
+  "edit": "edit",
+  "delete": "delete",
+  "sku": "sku",
+  "qty": "qty",
+  "status-1": "status",
+  "actions": "actions",
+  "price": "price"
 }

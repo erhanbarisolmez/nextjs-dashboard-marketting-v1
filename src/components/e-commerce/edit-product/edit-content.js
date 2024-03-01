@@ -69,6 +69,7 @@ const EditProductContent = ({ statusOptions, productTemplateStatus, taxStatus, v
             />}
           tabPanel3={
             <ReviewsTabContent
+            
              />}
         />
       </Grid>
